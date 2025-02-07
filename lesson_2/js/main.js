@@ -88,3 +88,17 @@ console.log(users[6].password);
 console.log(users[7].password);
 console.log(users[8].password);
 console.log(users[9].password);
+
+// Task 2.5
+//  описати масив, в якому буде зберігатись інформація про температуру вранці, вдень і ввечері за термін в 7 днів.
+//  Як зробити цей масив - вам потрібно подумати. Нормальних варіантів опису - 2.
+//  Варіант, коли в вас буде одновимірний масив з 21 значенням вичключаємо одразу
+let week = [
+    {day: 'Monday', morningTemp: '-4C', afternoonTemp: '-2C', eveningTemp: '-9C'},
+    {day: 'Tuesday', morningTemp: '-4C', afternoonTemp: '-5C', eveningTemp: '-10C'},
+    {day: 'Wednesday', morningTemp: '-2C', afternoonTemp: '-3C', eveningTemp: '-9C'},
+    {day: 'Thursday', morningTemp: '-2C', afternoonTemp: '+1C', eveningTemp: '-7C'},
+    {day: 'Friday', morningTemp: '0C', afternoonTemp: '+2C', eveningTemp: '-5C'},
+    {day: 'Saturday', morningTemp: '-1C', afternoonTemp: '0C', eveningTemp: '-5C'},
+    {day: 'Sunday', morningTemp: '-2C', afternoonTemp: '-4C', eveningTemp: '-6C'},
+];
