@@ -31,3 +31,33 @@ console.log(mixArr[9]);
 let book1 = {title: 'Dune', pageCount: 688, genre: 'Science Fiction'};
 let book2 = {title: 'Sapiens: A Brief History of Humankind', pageCount: 464, genre: 'History'};
 let book3 = {title: 'The Hobbit', pageCount: 310, genre: 'Fantasy'};
+
+// Task 2.3
+// - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors.
+// Поле "автори" - являється  масивом. Кожен автор має поля name та age.
+
+let gatsbyBook = {
+    title: 'The Great Gatsby',
+    pageCount: 281,
+    genre: 'Classic',
+    authors: [
+        {name: 'Scott Fitzgerald', age: 44},
+    ],
+};
+let styleBook = {
+    title: 'The Elements of Style',
+    pageCount: 105,
+    genre: 'Reference',
+    authors: [
+        {name: 'William Strunk Jr.', age: 85},
+        {name: 'E.B. White', age: 86},
+    ],
+};
+let daVinciBook = {
+    title: 'The Da Vinci Code',
+    pageCount: 454,
+    genre: 'Thriller',
+    authors: [
+        {name: 'Dan Brown', age: 59},
+    ],
+};
