@@ -188,4 +188,6 @@ switch (dayOfWeek) {
     case 7:
         console.log('Sunday');
         break;
+    default:
+        console.log('Wrong day!');
 }
