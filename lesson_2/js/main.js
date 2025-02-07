@@ -25,3 +25,9 @@ console.log(mixArr[6]);
 console.log(mixArr[7]);
 console.log(mixArr[8]);
 console.log(mixArr[9]);
+
+// Task 2.2
+// - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
+let book1 = {title: 'Dune', pageCount: 688, genre: 'Science Fiction'};
+let book2 = {title: 'Sapiens: A Brief History of Humankind', pageCount: 464, genre: 'History'};
+let book3 = {title: 'The Hobbit', pageCount: 310, genre: 'Fantasy'};
