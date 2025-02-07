@@ -191,3 +191,19 @@ switch (dayOfWeek) {
     default:
         console.log('Wrong day!');
 }
+
+
+// Task 2.10
+// - Користувач вводить або має два числа.
+// Потрібно знайти та вивести максимальне число з тих двох .
+// Також потрібно врахувати коли введені рівні числа.
+let firstNum = +prompt("Enter the first number");
+let secondNum = +prompt("Enter the second number");
+
+if (firstNum < secondNum) {
+    console.log(secondNum);
+} else if (firstNum > secondNum) {
+    console.log(firstNum);
+} else if (firstNum === secondNum) {
+    console.log('Numbers are equal');
+}
