@@ -164,7 +164,7 @@ switch (true) {
 // - Скласти розклад на тиждень за домопоги switch.
 // Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день
 // (можна замість плану на день, назву дня англійською).
-let dayOfWeek = prompt("Enter the day of week");
+let dayOfWeek = +prompt("Enter the day of week");
 
 switch (dayOfWeek) {
     case 1:
@@ -214,3 +214,35 @@ if (firstNum < secondNum) {
 //  (хибноподібні, тобто ті, які приводиться до false, а це 0 null undefined і тд).
 let x1;
 x1 = !x1 ? 'default': x1;
+
+// Task 2.12
+// - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray.
+// За допомоги іф перевірити кожен його елемент на тривалість навчання.
+// У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+
+if (coursesAndDurationArray[0].monthDuration > 5) {
+    console.log('Супер');
+}
+if (coursesAndDurationArray[1].monthDuration > 5) {
+    console.log('Супер');
+}
+if (coursesAndDurationArray[2].monthDuration > 5) {
+    console.log('Супер');
+}
+if (coursesAndDurationArray[3].monthDuration > 5) {
+    console.log('Супер');
+}
+if (coursesAndDurationArray[4].monthDuration > 5) {
+    console.log('Супер');
+}
+if (coursesAndDurationArray[5].monthDuration > 5) {
+    console.log('Супер');
+}
