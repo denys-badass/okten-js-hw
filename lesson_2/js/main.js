@@ -102,3 +102,18 @@ let week = [
     {day: 'Saturday', morningTemp: '-1C', afternoonTemp: '0C', eveningTemp: '-5C'},
     {day: 'Sunday', morningTemp: '-2C', afternoonTemp: '-4C', eveningTemp: '-6C'},
 ];
+
+// Task 2.6
+// - Є змінна х, якій ви надаєте довільне числове значення.
+// Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'.
+// Перевірте  скрипт при a, що дорівнює 1, 0, -3
+
+// let x = 1;
+// let x = 0;
+let x = -3;
+
+if (x !== 0) {
+    console.log('Вірно');
+} else {
+    console.log('Невірно');
+}
