@@ -146,3 +146,11 @@ const numbers = [5, 12, 24, 36, 47, 58, 69, 73, 84, 91];
 for (const number of numbers) {
     console.log(number);
 }
+
+// Task Additional 3.1.5
+// - Створити масив з 10 строкрових елементів. Вивести в консоль всі його елементи в циклі.
+const strings = ["apple", "banana", "cherry", "grape", "mango", "orange", "peach", "plum", "kiwi", "melon"];
+
+for (const string of strings) {
+    console.log(string);
+}
