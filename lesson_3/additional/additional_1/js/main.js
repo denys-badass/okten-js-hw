@@ -175,11 +175,21 @@ for (const element of mixedArr) {
 }
 
 // Task Additional 3.1.7
-// - Створити масив з 10 елементів числового, стірчкового і булевого типу. За допомогою if та typeof вивести тільки булеві елементи
+// - Створити масив з 10 елементів числового, стірчкового і булевого типу.
+// За допомогою if та typeof вивести тільки булеві елементи
 const threeTypesArr = [42, "apple", true, 7, "banana", false, 99, "cherry", true, 18];
 
 for (const element of threeTypesArr) {
     if (typeof element === 'boolean') {
+        console.log(element);
+    }
+}
+
+// Task Additional 3.1.8
+// - Створити масив з 10 елементів числового, стірчкового і булевого типу.
+// За допомогою if та typeof вивести тільки числові елементи
+for (const element of threeTypesArr) {
+    if (typeof element === 'number') {
         console.log(element);
     }
 }
