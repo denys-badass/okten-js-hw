@@ -14,5 +14,11 @@ for (let i = 0; i < 10; i++) {
 // Task 3.3
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
 for (let i = 0; i < 20; i++) {
-    document.write(`<h1>Header from loop</h1>`);
+    document.write('<h1>Header from loop</h1>');
+}
+
+// Task 3.4
+// - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом і індексом всередині.
+for (let i = 0; i < 20; i++) {
+    document.write(`<h1>Header number ${i} from loop</h1>`);
 }
