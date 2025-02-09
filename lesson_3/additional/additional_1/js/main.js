@@ -222,3 +222,11 @@ for (let i = 0; i < 10; i++) {
 for (const element of arrForFill) {
     console.log(element)
 }
+
+// Task Additional 3.1.11
+// - Створити цикл for на 10  ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
+for (let i = 0; i < 10; i++) {
+    const step = `step ${i}`;
+    console.log(step);
+    document.write(`<p>${step}</p>`);
+}
