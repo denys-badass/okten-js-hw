@@ -1,3 +1,5 @@
+'use strict';
+
 // Task Additional 3.1.1
 // --створити масив з:
 // - з 5 числових значень
@@ -13,5 +15,17 @@ const mixArr = [
 console.log(mixArr);
 
 for (const element of mixArr) {
+    console.log(element);
+}
+
+// Task Additional 3.1.2
+// -- Створити пустий масив. Наповнити його будь-якими значеннями звертаючись до конкретного індексу. Вивести в консоль
+const arrForFill = [];
+
+for (let i = 0; i < 10; i++) {
+    arrForFill[i] = `Line number ${i + 1}`;
+}
+
+for (const element of arrForFill) {
     console.log(element);
 }
