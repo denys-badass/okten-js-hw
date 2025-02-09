@@ -265,3 +265,16 @@ for (let i = 0; i < 100; i++) {
         document.write(`${step} `);
     }
 }
+
+// separate line
+document.write('<hr>');
+
+// Task Additional 3.1.15
+// - Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
+for (let i = 0; i < 100; i++) {
+    if (i % 2 !== 0) {
+        const step = `step ${i}`;
+        console.log(step);
+        document.write(`${step} `);
+    }
+}
