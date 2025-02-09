@@ -138,3 +138,11 @@ for (let i = numArr.length; i >= 0; i--) {
 }
 
 console.log(numArr);
+
+// Task Additional 3.1.4
+// - Створити масив з 10 числових елементів. Вивести в консоль всі його елементи в циклі.
+const numbers = [5, 12, 24, 36, 47, 58, 69, 73, 84, 91];
+
+for (const number of numbers) {
+    console.log(number);
+}
