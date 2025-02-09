@@ -241,3 +241,14 @@ for (let i = 0; i < 100; i++) {
     console.log(step);
     document.write(`${step} `);
 }
+
+// separate line
+document.write('<hr>');
+
+// Task Additional 3.1.13
+// - Створити цикл for на 100 ітерацій з кроком 2. Вивести поточний номер кроку через console.log та document.write
+for (let i = 0; i < 200; i += 2) {
+    const step = `step ${i}`;
+    console.log(step);
+    document.write(`${step} `);
+}
