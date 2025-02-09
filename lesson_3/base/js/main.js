@@ -24,3 +24,30 @@ for (let i = 0; i < 20; i++) {
 for (let i = 0; i < 20; i++) {
     document.write(`<h1>Header number ${i} from loop</h1>`);
 }
+
+// Task 3.5
+// - Використовуючи данні з масиву, за допомоги document.write та циклу
+// побудувати структуру по шаблону
+// Масив:
+//
+// let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+//
+// ШАБЛОН:
+//  <ul>
+//     <li>ITEM OF ARRAY</li>
+//     <!--
+//         і тд інші об'єкти масиву
+//          ...
+//          ...
+//          ...
+//     -->
+// </ul>
+//
+// замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву
+let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+
+document.write('<ul>')
+for (const listOfItem of listOfItems) {
+    document.write(`<li>${listOfItem}</li>`);
+}
+document.write('</ul>');
