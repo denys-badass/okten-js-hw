@@ -154,3 +154,22 @@ const strings = ["apple", "banana", "cherry", "grape", "mango", "orange", "peach
 for (const string of strings) {
     console.log(string);
 }
+
+// Task Additional 3.1.6
+// - Створити масив з 10 елементів будь-якого типу. Вивести в консоль всі його елементи в циклі.
+const mixedArr = [
+    42,
+    "Hello, Okten",
+    true,
+    null,
+    undefined,
+    { id: 1, key: 'value' },
+    [1, 2, 3],
+    false,
+    NaN,
+    99,
+];
+
+for (const element of mixedArr) {
+    console.log(element);
+}
