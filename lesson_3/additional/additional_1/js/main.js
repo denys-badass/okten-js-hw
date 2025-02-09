@@ -193,3 +193,12 @@ for (const element of threeTypesArr) {
         console.log(element);
     }
 }
+
+// Task Additional 3.1.9
+// - Створити масив з 10 елементів числового, стрічкового і булевого типу.
+// За допомогою if та typeof вивести тільки рядкові елементи
+for (const element of threeTypesArr) {
+    if (typeof element === 'string') {
+        console.log(element);
+    }
+}
