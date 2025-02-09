@@ -20,7 +20,7 @@ for (const element of mixArr) {
 
 // Task Additional 3.1.2
 // -- Створити пустий масив. Наповнити його будь-якими значеннями звертаючись до конкретного індексу. Вивести в консоль
-const arrForFill = [];
+let arrForFill = [];
 
 for (let i = 0; i < 10; i++) {
     arrForFill[i] = `Line number ${i + 1}`;
@@ -201,4 +201,24 @@ for (const element of threeTypesArr) {
     if (typeof element === 'string') {
         console.log(element);
     }
+}
+
+// Task Additional 3.1.10
+//  - Створити порожній масив. 
+//  Наповнити його 10 елементами (різними за типами) через звернення до конкретних індексів. 
+//  Вивести в консоль всі його елементи в циклі.
+arrForFill = [];
+
+for (let i = 0; i < 10; i++) {
+    if (i % 3 === 0) {
+        arrForFill[i] = `Element with index ${i}`;
+    } else if (i % 3 === 1) {
+        arrForFill[i] = i * 512;
+    } else {
+        arrForFill[i] = i % 2 === 0;
+    }
+}
+
+for (const element of arrForFill) {
+    console.log(element)
 }
