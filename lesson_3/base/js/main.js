@@ -94,3 +94,53 @@ for (const product of products) {
         <img src="${product.image}" alt="${product.title}" class="product-image">
     </div>`);
 }
+
+// Separate line
+document.write('<hr>');
+
+// Task 3.7
+// є масив
+//  за допомоги циклу вивести:
+//  - користувачів зі статусом true
+//  - користувачів зі статусом false
+//  - користувачів які старші за 30 років
+let users = [
+    {name: 'vasya', age: 31, status: false},
+    {name: 'petya', age: 30, status: true},
+    {name: 'kolya', age: 29, status: true},
+    {name: 'olya', age: 28, status: false},
+    {name: 'max', age: 30, status: true},
+    {name: 'anya', age: 31, status: false},
+    {name: 'oleg', age: 28, status: false},
+    {name: 'andrey', age: 29, status: true},
+    {name: 'masha', age: 30, status: true},
+    {name: 'olya', age: 31, status: false},
+    {name: 'max', age: 31, status: true}
+];
+
+document.write('<h4> True status users:</h4>');
+document.write('<ul>');
+for (const user of users) {
+    if (user.status) {
+        document.write(`<li>${user.name}</li>`);
+    }
+}
+document.write('</ul>');
+
+document.write('<h4> False status users:</h4>');
+document.write('<ul>');
+for (const user of users) {
+    if (!user.status) {
+        document.write(`<li>${user.name}</li>`);
+    }
+}
+document.write('</ul>');
+
+document.write('<h4>Users older than 30:</h4>');
+document.write('<ul>');
+for (const user of users) {
+    if (user.age > 30) {
+        document.write(`<li>${user.name}</li>`);
+    }
+}
+document.write('</ul>');
