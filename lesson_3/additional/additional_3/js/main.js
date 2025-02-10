@@ -84,7 +84,8 @@ for (let i = 1; i < arrForFill.length; i++) {
 }
 
 // Task Additional 3.3.6
-// 6. Є масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. Обрахувати середній чек.
+// 6. Є масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки.
+// Обрахувати середній чек.
 const purchases = [100,250,50,168,120,345,188];
 let sum = 0;
 
@@ -101,6 +102,53 @@ newArrForFill = [];
 
 for (let i = 0; i < arrForFill.length; i++) {
     newArrForFill[i] = arrForFill[i] * 5;
+}
+
+console.log(newArrForFill);
+
+// Task Additional 3.3.8
+// 8. Створити масив з будь якими значеннями (стрінги, числа, і тд...). пройтись по ньому,
+// і якщо елемент є числом - додати його в інший масив.
+const mixedArr = [
+    42,
+    "Hello, World!",
+    true,
+    null,
+    undefined,
+    { key: "value" },
+    [1, 2, 3],
+    false,
+    "Another string",
+    99,
+    -15,
+    "JavaScript Rocks!",
+    [10, "mixed", false],
+    { name: "John Doe" },
+    true,
+    0,
+    "Random text",
+    NaN,
+    3.14,
+    { nested: { inner: 5 }},
+    ["apple", "banana"],
+    false,
+    1024,
+    "Coding is fun!",
+    { numbers: [1, 2, 3] },
+    -999,
+    "Hello again!",
+    [null, 42, true],
+    2023,
+    { value: undefined }
+];
+newArrForFill = [];
+i = 0;
+
+for (const element of mixedArr) {
+    if (typeof element === 'number' && !isNaN(element)) {
+        newArrForFill[i] = element;
+        i++;
+    }
 }
 
 console.log(newArrForFill);
