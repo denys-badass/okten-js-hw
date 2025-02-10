@@ -124,21 +124,16 @@ if (x !== 0) {
 // (в першу, другу, третю или четверту частину години).
 let time = 44;
 
-switch (true) {
-    case time >= 0 && time < 15:
-        console.log('Перша');
-        break;
-    case time >= 15 && time < 30:
-        console.log('Друга');
-        break;
-    case time >= 30 && time < 45:
-        console.log('Треття');
-        break;
-    case time >= 45 && time < 60:
-        console.log('Четверта');
-        break;
-    default:
-        console.log('Wrong time!');
+if (time >= 0 && time < 15) {
+    console.log('Перша');
+} else if (time >= 15 && time < 30) {
+    console.log('Друга');
+} else if (time >= 30 && time < 45) {
+    console.log('Треття');
+} else if (time >= 45 && time < 60) {
+    console.log('Четверта');
+} else {
+    console.log('Wrong time!');
 }
 
 // Task 2.8
@@ -146,18 +141,14 @@ switch (true) {
 // Потрібно визначити, у яку половину(декаду) місяця потрапляє це число (у першу, другу чи третю).\
 let day = 17;
 
-switch (true) {
-    case day >= 1 && day <= 10:
-        console.log('Перша декада');
-        break;
-    case day >= 11 && day <= 20:
-        console.log('Друга декада');
-        break;
-    case day >= 21 && day <= 31:
-        console.log('Треття декада');
-        break;
-    default:
-        console.log('Невірний день!!!');
+if (day >= 1 && day <= 10) {
+    console.log('Перша декада');
+} else if (day >= 11 && day <= 20) {
+    console.log('Друга декада');
+} else if (day >= 21 && day <= 31) {
+    console.log('Треття декада');
+} else {
+    console.log('Невірний день!!!');
 }
 
 // Task 2.9
