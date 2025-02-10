@@ -59,3 +59,16 @@ for (let i = 2; i < arrForFill.length; i += 3) {
         console.log(element);
     }
 }
+
+// Task Additional 3.3.4
+// 4. Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним та записати їх в новий масив
+let newArrForFill = [];
+
+for (let i = 2, j = 0; i < arrForFill.length; i += 3) {
+    const element = arrForFill[i];
+    if (typeof element === 'number' && element % 2 === 0) {
+        console.log(element);
+        newArrForFill[j] = element;
+        j++;
+    }
+}
