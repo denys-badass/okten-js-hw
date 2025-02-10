@@ -82,3 +82,15 @@ for (let i = 1; i < arrForFill.length; i++) {
         console.log(arrForFill[i - 1]);
     }
 }
+
+// Task Additional 3.3.6
+// 6. Є масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. Обрахувати середній чек.
+const purchases = [100,250,50,168,120,345,188];
+let sum = 0;
+
+for (const purchase of purchases) {
+    sum += purchase;
+}
+
+const avgBill = sum / purchases.length;
+console.log(avgBill);
