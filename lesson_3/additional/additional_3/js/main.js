@@ -206,3 +206,13 @@ for (let i = 0; i < usersWithId.length; i++) {
 }
 
 console.log(usersWithCities);
+
+// Task Additional 3.3.10
+// - Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
+const numbers = [5, 12, 24, 36, 47, 58, 69, 73, 84, 91];
+
+for (const number of numbers) {
+    if (number % 2 === 0) {
+        console.log(number);
+    }
+}
