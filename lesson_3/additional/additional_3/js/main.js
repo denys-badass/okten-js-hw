@@ -51,3 +51,10 @@ for (let i = 2; i < arrForFill.length; i += 3) {
     console.log(arrForFill[i]);
 }
 
+// Task Additional 3.3.3
+// 3. Вивести за допомогою console.log кожен третій елемен тільки якщо цей елемент є парним.
+for (let i = 2; i < arrForFill.length; i += 3) {
+    if (arrForFill[i] % 2 == 0) {
+        console.log(arrForFill[i]);
+    }
+}
