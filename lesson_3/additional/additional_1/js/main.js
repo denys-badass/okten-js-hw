@@ -278,3 +278,143 @@ for (let i = 0; i < 100; i++) {
         document.write(`${step} `);
     }
 }
+
+// separate line
+document.write('<hr>');
+
+// Task Additional 3.1.16
+// стоврити масив книжок (назва, кількість сторінок, автори , жанри).
+const books = [
+    {
+        title: "Good Omens",
+        pages: 432,
+        authors: ["Neil Gaiman", "Terry Pratchett"],
+        genres: ["Fantasy", "Comedy", "Apocalyptic Fiction"]
+    },
+    {
+        title: "The Art of Computer Programming",
+        pages: 672,
+        authors: ["Donald Knuth"],
+        genres: ["Computer Science", "Programming", "Mathematics"]
+    },
+    {
+        title: "The Diamond Age",
+        pages: 499,
+        authors: ["Neal Stephenson"],
+        genres: ["Science Fiction", "Cyberpunk"]
+    },
+    {
+        title: "The Federalist Papers",
+        pages: 615,
+        authors: ["Alexander Hamilton", "James Madison", "John Jay"],
+        genres: ["Politics", "History", "Philosophy"]
+    },
+    {
+        title: "Principia Mathematica",
+        pages: 1200,
+        authors: ["Alfred North Whitehead", "Bertrand Russell"],
+        genres: ["Mathematics", "Philosophy", "Logic"]
+    },
+    {
+        title: "The Phoenix Project",
+        pages: 400,
+        authors: ["Gene Kim", "Kevin Behr", "George Spafford"],
+        genres: ["Business", "Technology", "Management"]
+    },
+    {
+        title: "The Pragmatic Programmer",
+        pages: 352,
+        authors: ["Andrew Hunt", "David Thomas"],
+        genres: ["Programming", "Technology", "Software Development"]
+    },
+    {
+        title: "Artificial Intelligence: A Guide to Thinking Machines",
+        pages: 320,
+        authors: ["Blay Whitby"],
+        genres: ["Artificial Intelligence", "Technology"]
+    },
+    {
+        title: "The Mythical Man-Month",
+        pages: 322,
+        authors: ["Frederick P. Brooks Jr."],
+        genres: ["Software Development", "Project Management", "Technology"]
+    },
+    {
+        title: "Design Patterns",
+        pages: 395,
+        authors: ["Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"],
+        genres: ["Programming", "Software Engineering"]
+    }
+];
+
+// - знайти наібльшу книжку.
+let maxPagesBook;
+let maxPage = 0;
+
+for (const book of books) {
+    if (book.pages > maxPage) {
+        maxPage = book.pages;
+        maxPagesBook = book;
+    }
+}
+
+document.write(`<p>The most fat book is ${maxPagesBook.title}, it has ${maxPagesBook.pages} pages.</p>`);
+
+// - знайти книжку/ки з найбільшою кількістю жанрів
+let maxAuthor = 0;
+
+for (const book of books) {
+    const numOfAuthors = book.authors.length;
+    if (numOfAuthors > maxAuthor) {
+        maxAuthor = numOfAuthors;
+    }
+}
+
+document.write('<p>The books which have the most number of authors:</p>')
+document.write('<ul>')
+for (const book of books) {
+    const numOfAuthors = book.authors.length;
+    if (numOfAuthors === maxAuthor) {
+        document.write(`<li>${book.title} has ${numOfAuthors} authors</li>`);
+    }
+}
+document.write('</ul>');
+
+// - знайти книжку/ки з найдовшою назвою
+let maxLengthTitle = 0;
+
+for (const book of books) {
+    const lengthTitle = book.title.length;
+    if (lengthTitle > maxLengthTitle) {
+        maxLengthTitle = lengthTitle;
+    }
+}
+
+document.write('<p>The longest title of books:</p>');
+document.write('<ul>');
+for (const book of books) {
+    if (book.title.length === maxLengthTitle) {
+        document.write(`<li>${book.title}</li>`);
+    }
+}
+document.write('</ul>');
+
+// - знайти книжку/ки які писали 2 автори
+document.write('<p>This books was wroten by 2 authors</p>');
+document.write('<ul>');
+for (const book of books) {
+    if (book.authors.length === 2) {
+        document.write(`<li>${book.title}, (${book.authors[0]}, ${book.authors[1]})</li>`);
+    }
+}
+document.write('</ul>');
+
+// - знайти книжку/ки які писав 1 автор
+document.write('<p>Single author books:</p>');
+document.write('<ul>');
+for (const book of books) {
+    if (book.authors.length === 1) {
+        document.write(`<li>${book.title}, (${book.authors[0]})</li>`);
+    }
+}
+document.write('</ul>');
