@@ -6,11 +6,7 @@
 // - з 5 стічкових значень
 // - з 5 значень стрічкового, числового та булевого типу
 // - та вивести його в консоль
-const mixArr = [
-    42, 7, 19, 100, 3,
-    "apple", "banana", "cherry", "grape", "mango",
-    "hello", 25, true, "world", false,
-];
+const mixArr = [42, 7, 19, 100, 3, "apple", "banana", "cherry", "grape", "mango", "hello", 25, true, "world", false,];
 // I don`t get it. Should I print to console full array or each element separate?
 console.log(mixArr);
 
@@ -99,7 +95,7 @@ while (i >= 0) {
     i--;
 }
 
-for (let i = numArr.length - 1; i >= 0 ; i--) {
+for (let i = numArr.length - 1; i >= 0; i--) {
     console.log(numArr[i]);
 }
 
@@ -157,18 +153,7 @@ for (const string of strings) {
 
 // Task Additional 3.1.6
 // - Створити масив з 10 елементів будь-якого типу. Вивести в консоль всі його елементи в циклі.
-const mixedArr = [
-    42,
-    "Hello, Okten",
-    true,
-    null,
-    undefined,
-    { id: 1, key: 'value' },
-    [1, 2, 3],
-    false,
-    NaN,
-    99,
-];
+const mixedArr = [42, "Hello, Okten", true, null, undefined, {id: 1, key: 'value'}, [1, 2, 3], false, NaN, 99,];
 
 for (const element of mixedArr) {
     console.log(element);
@@ -284,68 +269,54 @@ document.write('<hr>');
 
 // Task Additional 3.1.16
 // стоврити масив книжок (назва, кількість сторінок, автори , жанри).
-const books = [
-    {
-        title: "Good Omens",
-        pages: 432,
-        authors: ["Neil Gaiman", "Terry Pratchett"],
-        genres: ["Fantasy", "Comedy", "Apocalyptic Fiction"]
-    },
-    {
-        title: "The Art of Computer Programming",
-        pages: 672,
-        authors: ["Donald Knuth"],
-        genres: ["Computer Science", "Programming", "Mathematics"]
-    },
-    {
-        title: "The Diamond Age",
-        pages: 499,
-        authors: ["Neal Stephenson"],
-        genres: ["Science Fiction", "Cyberpunk"]
-    },
-    {
-        title: "The Federalist Papers",
-        pages: 615,
-        authors: ["Alexander Hamilton", "James Madison", "John Jay"],
-        genres: ["Politics", "History", "Philosophy"]
-    },
-    {
-        title: "Principia Mathematica",
-        pages: 1200,
-        authors: ["Alfred North Whitehead", "Bertrand Russell"],
-        genres: ["Mathematics", "Philosophy", "Logic"]
-    },
-    {
-        title: "The Phoenix Project",
-        pages: 400,
-        authors: ["Gene Kim", "Kevin Behr", "George Spafford"],
-        genres: ["Business", "Technology", "Management"]
-    },
-    {
-        title: "The Pragmatic Programmer",
-        pages: 352,
-        authors: ["Andrew Hunt", "David Thomas"],
-        genres: ["Programming", "Technology", "Software Development"]
-    },
-    {
-        title: "Artificial Intelligence: A Guide to Thinking Machines",
-        pages: 320,
-        authors: ["Blay Whitby"],
-        genres: ["Artificial Intelligence", "Technology"]
-    },
-    {
-        title: "The Mythical Man-Month",
-        pages: 322,
-        authors: ["Frederick P. Brooks Jr."],
-        genres: ["Software Development", "Project Management", "Technology"]
-    },
-    {
-        title: "Design Patterns",
-        pages: 395,
-        authors: ["Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"],
-        genres: ["Programming", "Software Engineering"]
-    }
-];
+const books = [{
+    title: "Good Omens",
+    pages: 432,
+    authors: ["Neil Gaiman", "Terry Pratchett"],
+    genres: ["Fantasy", "Comedy", "Apocalyptic Fiction"]
+}, {
+    title: "The Art of Computer Programming",
+    pages: 672,
+    authors: ["Donald Knuth"],
+    genres: ["Computer Science", "Programming", "Mathematics"]
+}, {
+    title: "The Diamond Age", pages: 499, authors: ["Neal Stephenson"], genres: ["Science Fiction", "Cyberpunk"]
+}, {
+    title: "The Federalist Papers",
+    pages: 615,
+    authors: ["Alexander Hamilton", "James Madison", "John Jay"],
+    genres: ["Politics", "History", "Philosophy"]
+}, {
+    title: "Principia Mathematica",
+    pages: 1200,
+    authors: ["Alfred North Whitehead", "Bertrand Russell"],
+    genres: ["Mathematics", "Philosophy", "Logic"]
+}, {
+    title: "The Phoenix Project",
+    pages: 400,
+    authors: ["Gene Kim", "Kevin Behr", "George Spafford"],
+    genres: ["Business", "Technology", "Management"]
+}, {
+    title: "The Pragmatic Programmer",
+    pages: 352,
+    authors: ["Andrew Hunt", "David Thomas"],
+    genres: ["Programming", "Technology", "Software Development"]
+}, {
+    title: "Artificial Intelligence: A Guide to Thinking Machines",
+    pages: 320,
+    authors: ["Blay Whitby"],
+    genres: ["Artificial Intelligence", "Technology"]
+}, {
+    title: "The Mythical Man-Month",
+    pages: 322,
+    authors: ["Frederick P. Brooks Jr."],
+    genres: ["Software Development", "Project Management", "Technology"]
+}, {
+    title: "Design Patterns",
+    pages: 395,
+    authors: ["Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"],
+    genres: ["Programming", "Software Engineering"]
+}];
 
 // - знайти наібльшу книжку.
 let maxPagesBook;
