@@ -94,3 +94,13 @@ for (const purchase of purchases) {
 
 const avgBill = sum / purchases.length;
 console.log(avgBill);
+
+// Task Additional 3.3.7
+// 7. Створити масив з рандомними значеннями, помножити всі його елементи на 5 та перемістити їх в інший масив.
+newArrForFill = [];
+
+for (let i = 0; i < arrForFill.length; i++) {
+    newArrForFill[i] = arrForFill[i] * 5;
+}
+
+console.log(newArrForFill);
