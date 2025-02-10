@@ -139,7 +139,7 @@ const mixedArr = [
     "Hello again!",
     [null, 42, true],
     2023,
-    { value: undefined }
+    { value: undefined },
 ];
 newArrForFill = [];
 i = 0;
@@ -152,3 +152,4 @@ for (const element of mixedArr) {
 }
 
 console.log(newArrForFill);
+
