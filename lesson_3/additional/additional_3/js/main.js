@@ -153,3 +153,56 @@ for (const element of mixedArr) {
 
 console.log(newArrForFill);
 
+// Task Additional 3.3.9
+// - Дано 2 масиви з рівною кількістю об'єктів.
+//
+// З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
+// Записати цей об'єкт в новий масив
+// Example:
+// let usersWithCities = [
+//     {
+//         id: 1, // <===
+//         name: 'vasya',
+//         age: 31,
+//         status: false,
+//         address: {
+//             user_id: 1, // <===
+//             country: 'Ukraine',
+//             city: 'Ternopil'
+//         }
+//     },
+//     // TO BE CONTINUED .....
+// ]
+const usersWithId = [
+    {id: 1, name: 'vasya', age: 31, status: false},
+    {id: 2, name: 'petya', age: 30, status: true},
+    {id: 3, name: 'kolya', age: 29, status: true},
+    {id: 4, name: 'olya', age: 28, status: false}
+];
+
+const citiesWithId = [
+    {user_id: 3, country: 'USA', city: 'Portland'},
+    {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+    {user_id: 2, country: 'Poland', city: 'Krakow'},
+    {user_id: 4, country: 'USA', city: 'Miami'}
+];
+
+const usersWithCities = [];
+
+for (let i = 0; i < usersWithId.length; i++) {
+    const user = usersWithId[i];
+    const city = citiesWithId[i];
+    const userWithCity = {};
+
+    for (const userKey in user) {
+        userWithCity[userKey] = user[userKey];
+    }
+
+    userWithCity.address = {};
+    for (const cityKey in city) {
+        userWithCity.address[cityKey] = city[cityKey];
+    }
+    usersWithCities[i] = userWithCity;
+}
+
+console.log(usersWithCities);
