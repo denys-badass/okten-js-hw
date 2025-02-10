@@ -44,3 +44,10 @@ for (let i = 0; i < 20; i++) {
 }
 
 console.log(arrForFill);
+
+// Task Additional 3.3.2
+// 2. Вивести за допомогою console.log кожен третій елемен
+for (let i = 2; i < arrForFill.length; i += 3) {
+    console.log(arrForFill[i]);
+}
+
