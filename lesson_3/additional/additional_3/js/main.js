@@ -1,3 +1,5 @@
+'use strict';
+
 // Task Additional 3.3.1
 // 1. Створити пустий масив та :
 // a. заповнити його 50 парними числами за допомоги циклу.
@@ -227,3 +229,35 @@ for (let i = 0; i < numbers.length; i++) {
 }
 
 console.log(newArrForFill);
+
+// Task Additional 3.3.12
+// - Дано масив: [ 'a', 'b', 'c'] .
+// За допомогою циклу for зібрати всі букви в слово.
+const letters = [ 'a', 'b', 'c'];
+let word = '';
+
+for (let i = 0; i < letters.length; i++) {
+    word += letters[i];
+}
+
+console.log(word);
+
+// За допомогою циклу while зібрати всі букви в слово.
+i = 0;
+word = '';
+
+while (i < letters.length) {
+    word += letters[i];
+    i++;
+}
+
+console.log(word);
+
+// За допомогою циклу for of зібрати всі букви в слово.
+word = '';
+
+for (const letter of letters) {
+    word += letter;
+}
+
+console.log(word);
