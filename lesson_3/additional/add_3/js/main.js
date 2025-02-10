@@ -920,3 +920,15 @@ const posts = [
             'accusamus ratione error aut'
     }
 ];
+
+
+document.write('<div class="wrap">');
+
+for (const post of posts) {
+    document.write(`<div class="post-card">
+        <h3>${post.id} - ${post.title}</h3>
+        <p>${post.body}</p>
+    </div>`);
+}
+
+document.write('</div>');

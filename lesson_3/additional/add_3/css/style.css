@@ -3,3 +3,28 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.wrap {
+    width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    grid-template-rows: auto;
+    gap: 50px;
+    padding: 50px 0;
+}
+
+.post-card {
+    border: 1px solid #817d7d;
+    border-radius: 10px;
+    box-shadow: 10px 10px 16px -8px rgba(0,0,0,0.75);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.post-card h3 {
+    text-align: center;
+}
