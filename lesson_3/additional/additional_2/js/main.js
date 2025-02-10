@@ -1,5 +1,6 @@
 'use strict';
 
+// Task Additional 3.2.1
 // За допомогою циклу вивести всю інформацію про користувачів використовуючи шаблон Template 1.1
 //  за допомоги стилів, побудувати сітку по 2 об'єкта в лінію
 // Template 1.1
@@ -254,3 +255,18 @@ let usersList = [
         }
     }
 ];
+document.write('<div class="users-box">');
+for (const user of usersList) {
+    const address = user.address;
+    document.write(`<div class="user-block">
+        <h2>${user.id} - ${user.name} - ${user.username}</h2>
+        <h3>${user.email} - ${user.phone}</h3>
+        <div class="address-block">
+            <p>City - ${address.city}</p>
+            <p>Street - ${address.street}</p>
+            <p>Suite - ${address.suite}</p>
+            <p>Zip code - ${address.zipcode}</p>
+        </div>    
+    </div>`);
+}
+document.write('</div>');
