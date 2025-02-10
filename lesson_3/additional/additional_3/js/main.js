@@ -72,3 +72,13 @@ for (let i = 2, j = 0; i < arrForFill.length; i += 3) {
         j++;
     }
 }
+console.log(newArrForFill);
+
+// Task Additional 3.3.5
+// 5. Вивести кожен елемент масиву, сусід справа якого є парним
+for (let i = 1; i < arrForFill.length; i++) {
+    const element = arrForFill[i];
+    if (typeof element === 'number' && element % 2 === 0) {
+        console.log(arrForFill[i - 1]);
+    }
+}
