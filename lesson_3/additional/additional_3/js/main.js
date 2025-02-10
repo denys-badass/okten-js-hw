@@ -216,3 +216,14 @@ for (const number of numbers) {
         console.log(number);
     }
 }
+
+// Task Additional 3.3.11
+// - Взяти масив з 10 чисел або створити його. Створити 2й порожній масив.
+// За допомогою будь-якого циклу скопіювати значення одного масиву в інший.
+newArrForFill = [];
+
+for (let i = 0; i < numbers.length; i++) {
+    newArrForFill[i] = numbers[i];
+}
+
+console.log(newArrForFill);
