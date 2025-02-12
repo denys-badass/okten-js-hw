@@ -15,7 +15,7 @@ function getCircleArea(r) {
 // Task 4.3
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіусом r
 function getCylinderArea(h, r) {
-    return getCircleArea(r) * h;
+    return 2 * Math.PI * r * h;
 }
 
 // Task 4.4
