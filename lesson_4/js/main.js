@@ -78,3 +78,13 @@ function writeObjects(arr) {
         </div>`);
     }
 }
+
+// Task 4.10
+// - створити функцію яка повертає найменьше число з масиву
+function getMinValue(arr) {
+    let min = Number.MAX_VALUE;
+    for (const element of arr) {
+        min = element < min ? element : min;
+    }
+    return min;
+}
