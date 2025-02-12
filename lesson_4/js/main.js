@@ -65,3 +65,16 @@ function writeListFromArr(arr) {
     }
     document.write('</ul>');
 }
+
+// Task 4.9
+// - створити функцію яка приймає масив об'єктів з наступними полями id, name, age,
+// та виводить їх в документ. Для кожного об'єкту окремий блок.
+function writeObjects(arr) {
+    for (const element of arr) {
+        document.write(`<div>
+            <p>${element.id}</p>
+            <p>${element.name}</p>
+            <p>${element.age}</p>
+        </div>`);
+    }
+}
