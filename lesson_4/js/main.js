@@ -88,3 +88,14 @@ function getMinValue(arr) {
     }
     return min;
 }
+
+// Task 4.11
+// - створити функцію sum(arr) яка приймає масив чисел, сумує значення елементів масиву та повертає його.
+// Приклад sum([1,2,10]) //->13
+function sum(arr) {
+    let sum = 0;
+    for (const element of arr) {
+        sum += element;
+    }
+    return sum;
+}
