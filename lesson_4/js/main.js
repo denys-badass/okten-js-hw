@@ -55,3 +55,13 @@ function writeListElements(text, num) {
     document.write('</ul>');
 }
 
+// Task 4.8
+// - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві),
+// та будує для них список (ul li) та виводить його через document.write
+function writeListFromArr(arr) {
+    document.write('<ul>');
+    for (const element of arr) {
+        document.write(`<li>${element}</li>`);
+    }
+    document.write('</ul>');
+}
