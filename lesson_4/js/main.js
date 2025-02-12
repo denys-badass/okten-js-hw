@@ -31,3 +31,14 @@ function printElements(arr) {
 function writeParagraph(text) {
     document.write(`<p>${text}</p>`);
 }
+
+// Task 4.6
+// - створити функцію яка створює ul з трьома елементами li та виводить його через document.write.
+// Текст li задати через аргумент всім однаковий
+function writeUList(text) {
+    document.write('<ul>');
+    for (let i = 0; i < 3; i++) {
+        document.write(`<li>${text}</li>`);
+    }
+    document.write('</ul>');
+}
