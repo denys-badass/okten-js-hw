@@ -17,3 +17,11 @@ function getCircleArea(r) {
 function getCylinderArea(h, r) {
     return getCircleArea(r) * h;
 }
+
+// Task 4.4
+// - створити функцію яка приймає масив та виводить кожен його елемент
+function printElements(arr) {
+    for (const element of arr) {
+        console.log(element);
+    }
+}
