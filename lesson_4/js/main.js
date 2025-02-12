@@ -48,8 +48,10 @@ function writeUList(text) {
 // Кількість li визначається другим аргументом,
 // який є числовим (тут використовувати цикл) та виводить його через document.write
 function writeListElements(text, num) {
+    document.write('<ul>');
     for (let i = 0; i < num; i++) {
         document.write(`<li>${text}</li>`);
     }
     document.write('</ul>');
 }
+
