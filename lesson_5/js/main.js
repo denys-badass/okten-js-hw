@@ -77,3 +77,14 @@ const getMinValue = (arr) => {
     }
     return min;
 }
+
+// Task 5.11
+// - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його.
+// Приклад sum([1,2,10]) //->13
+const sum = (arr) => {
+    let sum = 0;
+    for (const element of arr) {
+        sum += element;
+    }
+    return sum;
+}
