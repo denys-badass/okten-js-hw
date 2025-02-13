@@ -23,3 +23,13 @@ const printElements = (arr) => {
 // Task 5.5
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
 const writeParagraph = (text) => document.write(`<p>${text}</p>`);
+
+// Task 5.6
+// - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+const writeUList = (text) => {
+    document.write('<ul>');
+    for (let i = 0; i < 3; i++) {
+        document.write(`<li>${text}</li>`);
+    }
+    document.write('</ul>');
+}
