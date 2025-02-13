@@ -44,3 +44,26 @@ const writeListElements = (text, num) => {
     }
     document.write('</ul>');
 }
+
+// Task 5.8
+// - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+const writeListFromArr = (arr) => {
+    document.write('<ul>');
+    for (const element of arr) {
+        document.write(`<li>${element}</li>`);
+    }
+    document.write('</ul>');
+}
+
+// Task 5.9
+// - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ.
+// Для кожного об'єкту окремий блок.
+const writeObjects = (arr) => {
+    for (const element of arr) {
+        document.write(`<div>
+            <p>${element.id}</p>
+            <p>${element.name}</p>
+            <p>${element.age}</p>
+        </div>`);
+    }
+}
