@@ -97,7 +97,7 @@ const  swap = (arr, index1, index2) => {
     return arr;
 }
 
-// Task 5.12
+// Task 5.13
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 const exchange = (sumUAH, currencyValues, exchangeCurrency) => {
