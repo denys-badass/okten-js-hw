@@ -19,3 +19,7 @@ const printElements = (arr) => {
         console.log(element);
     }
 }
+
+// Task 5.5
+// - створити функцію яка створює параграф з текстом. Текст задати через аргумент
+const writeParagraph = (text) => document.write(`<p>${text}</p>`);
