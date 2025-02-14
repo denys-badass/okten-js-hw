@@ -39,3 +39,17 @@ let arr = stringToArray(str);
 // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
 let numbers = [10,8,-7,55,987,-1011,0,1050,0];
 numbers = numbers.map(number => number + '');
+
+// Task 6.7
+// - створити функцію sortNums(array,direction), яка прймає масив чисел, та сортує його від більшого до меньшого,
+// або навпаки в залежності від значення аргументу direction.
+// let nums = [11,21,3];
+// sortNums(nums,'ascending') // [3,11,21]
+// sortNums(nums,'descending') // [21,11,3]
+const sortNums = (array,direction) => {
+    if (direction === 'ascending') {
+        array.sort((a, b) => a - b);
+    } else if (direction === 'descending') {
+        array.sort((a, b) => b - a);
+    }
+}
