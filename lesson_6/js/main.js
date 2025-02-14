@@ -25,3 +25,12 @@ console.log('JAVASCRIPT IS COOL'.toLowerCase());
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 let str = ' dirty string   ';
 str = str.trim();
+
+// Task 6.5
+// - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
+//     let str = 'Ревуть воли як ясла повні';
+//     let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
+const stringToArray = (str) => str.split(' ');
+
+str = 'Ревуть воли як ясла повні';
+let arr = stringToArray(str);
