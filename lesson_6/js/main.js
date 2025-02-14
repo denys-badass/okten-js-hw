@@ -124,3 +124,29 @@ const diamondCards = cardDeck.filter(card => card.cardSuit === 'diamond');
 
 //  - всі трефи від 9 та більше
 const clubTopCards = cardDeck.filter(card => card.cardSuit === 'clubs' && (card.value >= '9' || card.value === '10'));
+
+// Task 6.10
+// Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
+// {
+//     spades:[],
+//     diamonds:[],
+//     hearts:[],
+//     clubs:[]
+// }
+const deckBySuit = cardDeck.reduce((acc, card) => {
+    switch (card.cardSuit) {
+        case 'spade':
+            acc.spades.push(card);
+            break;
+        case 'diamond':
+            acc.diamonds.push(card);
+            break;
+        case 'heart':
+            acc.hearts.push(card);
+            break;
+        case 'clubs':
+            acc.clubs.push(card);
+            break;
+    }
+    return acc;
+}, {spades: [], diamonds: [], hearts: [], clubs: []});
