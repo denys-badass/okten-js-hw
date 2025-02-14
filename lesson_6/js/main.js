@@ -13,3 +13,10 @@ console.log('javascript is cool'.length);
 console.log('hello world'.toUpperCase());
 console.log('lorem ipsum'.toUpperCase());
 console.log('javascript is cool'.toUpperCase());
+
+// Task 6.2
+// - Перевести до нижнього регістру настипні стрінгові значення
+//       'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
+console.log('HELLO WORLD'.toLowerCase());
+console.log('LOREM IPSUM'.toLowerCase());
+console.log('JAVASCRIPT IS COOL'.toLowerCase());
