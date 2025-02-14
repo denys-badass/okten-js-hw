@@ -14,9 +14,14 @@ console.log('hello world'.toUpperCase());
 console.log('lorem ipsum'.toUpperCase());
 console.log('javascript is cool'.toUpperCase());
 
-// Task 6.2
+// Task 6.3
 // - Перевести до нижнього регістру настипні стрінгові значення
 //       'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
 console.log('HELLO WORLD'.toLowerCase());
 console.log('LOREM IPSUM'.toLowerCase());
 console.log('JAVASCRIPT IS COOL'.toLowerCase());
+
+// Task 6.4
+// - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
+let str = ' dirty string   ';
+str = str.trim();
