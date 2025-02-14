@@ -37,7 +37,7 @@ let arr = stringToArray(str);
 
 // Task 6.6
 // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map  перетворити всі об'єкти в масиві на стрінгові.
-let numbers = [10,8,-7,55,987,-1011,0,1050,0];
+let numbers = [10, 8, -7, 55, 987, -1011, 0, 1050, 0];
 numbers = numbers.map(number => number + '');
 
 // Task 6.7
@@ -46,7 +46,7 @@ numbers = numbers.map(number => number + '');
 // let nums = [11,21,3];
 // sortNums(nums,'ascending') // [3,11,21]
 // sortNums(nums,'descending') // [21,11,3]
-const sortNums = (array,direction) => {
+const sortNums = (array, direction) => {
     if (direction === 'ascending') {
         array.sort((a, b) => a - b);
     } else if (direction === 'descending') {
@@ -79,3 +79,48 @@ const coursesWithId = coursesAndDurationArray.map((value, index) => {
         monthDuration: value.monthDuration,
     }
 });
+
+// Task 6.9
+//  описати колоду карт (від 6 до туза без джокерів)
+//
+// {
+//     cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
+//     value: '', // '6'-'10', 'ace','jack','queen','king'
+//     color:'', // 'red','black'
+// }
+const cardSuits = ['spade', 'diamond', 'heart', 'clubs'];
+const cardValues = ['6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+
+const cardDeckFiller = (suits, values) => {
+    const deck = [];
+    for (const suit of suits) {
+        if (suit === 'spade' || suit === 'clubs') {
+            for (const value of values) {
+                deck.push({value: value, cardSuit: suit, color: 'black'});
+            }
+        } else if (suit === 'diamond' || suit === 'heart') {
+            for (const value of values) {
+                deck.push({value: value, cardSuit: suit, color: 'red'});
+            }
+        }
+        
+    }
+    return deck;
+}
+
+const cardDeck = cardDeckFiller(cardSuits, cardValues);
+
+//  - знайти піковий туз
+const spadeAce = cardDeck.find(({value, cardSuit}) => value === 'A' && cardSuit === 'spade');
+
+//  - всі шістки
+const cardsWithSixValue = cardDeck.filter(card => card.value === '6');
+
+//  - всі червоні карти
+const redCards = cardDeck.filter(card => card.color === 'red');
+
+//  - всі буби
+const diamondCards = cardDeck.filter(card => card.cardSuit === 'diamond');
+
+//  - всі трефи від 9 та більше
+const clubTopCards = cardDeck.filter(card => card.cardSuit === 'clubs' && (card.value >= '9' || card.value === '10'));
