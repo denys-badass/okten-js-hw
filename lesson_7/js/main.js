@@ -201,3 +201,21 @@ for (const cinderella of cinderellas) {
 }
 
 const targetCinderella = cinderellas.find(cinderella => cinderella.footSize === prince.shoe.size);
+
+// Task 7.9
+// *Через Array.prototype. створити власний foreach, filter
+Array.prototype.myForEach = function (callback) {
+    for (let i = 0; i < this.length; i++) {
+        const value = this[i];
+        callback(value, i);
+    }
+};
+
+Array.prototype.myFilter = function (predicate) {
+    for (let i = 0; i < this.length; i++) {
+        const value = this[i];
+        if (predicate(value)) {
+            return value;
+        }
+    }
+};
