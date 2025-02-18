@@ -212,8 +212,7 @@ Array.prototype.myForEach = function (callback) {
 };
 
 Array.prototype.myFilter = function (predicate) {
-    for (let i = 0; i < this.length; i++) {
-        const value = this[i];
+    for (const value of this) {
         if (predicate(value)) {
             return value;
         }
