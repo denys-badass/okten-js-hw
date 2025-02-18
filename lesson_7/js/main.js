@@ -17,7 +17,7 @@ function* idGen(num) {
     }
 }
 
-const id = idGen(50000);
+const id = idGen(Number.MAX_SAFE_INTEGER);
 
 const users = [];
 users.push(new User(id.next().value, 'John', 'Smith', 'john.smith@example.com', '+1-555-1234'));
@@ -30,3 +30,7 @@ users.push(new User(id.next().value, 'William', 'Anderson', 'william.anderson@ex
 users.push(new User(id.next().value, 'Ava', 'Thomas', 'ava.thomas@example.com', '+1-555-9202'));
 users.push(new User(id.next().value, 'James', 'Hernandez', 'james.hernandez@example.com', '+1-555-1223'));
 users.push(new User(id.next().value, 'Isabella', 'Moore', 'isabella.moore@example.com', '+1-555-3243'));
+
+// Task 7.2
+// - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
+const filteredUsers = users.filter((user) => user.id % 2 === 0);
