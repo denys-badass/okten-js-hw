@@ -37,7 +37,7 @@ const filteredUsers = users.filter((user) => user.id % 2 === 0);
 
 // Task 7.3
 // - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
-const sortedUsers = users.sort((a, b) => a.id - b.id);
+users.sort((a, b) => a.id - b.id);
 
 // Task 7.4
 // - створити конструктор для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
@@ -62,3 +62,8 @@ clients.push(new Client(id.next().value, 'James', 'Miller', 'james.miller@exampl
 clients.push(new Client(id.next().value, 'Isabella', 'Davis', 'isabella.davis@example.com', '+1-555-8888', ['Speakers', 'Microphone']));
 clients.push(new Client(id.next().value, 'Benjamin', 'Rodriguez', 'benjamin.rodriguez@example.com', '+1-555-9999', ['E-Reader']));
 clients.push(new Client(id.next().value, 'Mia', 'Martinez', 'mia.martinez@example.com', '+1-555-1010', ['Vacuum Cleaner', 'Air Purifier']));
+
+// Task 7.5
+// - Взяти масив (Client [] з попереднього завдання).
+// Відсортувати його по кількості товарів в полі order по зростанню. (sort)
+clients.sort((a, b) => a.order.length - b.order.length);
