@@ -34,3 +34,7 @@ users.push(new User(id.next().value, 'Isabella', 'Moore', 'isabella.moore@exampl
 // Task 7.2
 // - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
 const filteredUsers = users.filter((user) => user.id % 2 === 0);
+
+// Task 7.3
+// - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
+const sortedUsers = users.sort((a, b) => a.id - b.id);
