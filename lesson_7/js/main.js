@@ -38,3 +38,27 @@ const filteredUsers = users.filter((user) => user.id % 2 === 0);
 // Task 7.3
 // - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
 const sortedUsers = users.sort((a, b) => a.id - b.id);
+
+// Task 7.4
+// - створити конструктор для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
+// створити пустий масив, наповнити його 10 об'єктами Client
+function Client(id, name, surname, email, phone, order) {
+    this.id = id;
+    this.name = name;
+    this.surname = surname;
+    this.email = email;
+    this.phone = phone;
+    this.order = order;
+}
+
+const clients = [];
+clients.push(new Client(id.next().value, 'Liam', 'Brown', 'liam.brown@example.com', '+1-555-1111', ['Laptop', 'Mouse']));
+clients.push(new Client(id.next().value, 'Emma', 'Smith', 'emma.smith@example.com', '+1-555-2222', ['Phone', 'Headphones']));
+clients.push(new Client(id.next().value, 'Noah', 'Johnson', 'noah.johnson@example.com', '+1-555-3333', ['Tablet', 'Smartwatch']));
+clients.push(new Client(id.next().value, 'Olivia', 'Williams', 'olivia.williams@example.com', '+1-555-4444', ['Monitor', 'Keyboard']));
+clients.push(new Client(id.next().value, 'William', 'Jones', 'william.jones@example.com', '+1-555-5555', ['Desk Chair']));
+clients.push(new Client(id.next().value, 'Sophia', 'Garcia', 'sophia.garcia@example.com', '+1-555-6666', ['Camera', 'Tripod', 'SD Card']));
+clients.push(new Client(id.next().value, 'James', 'Miller', 'james.miller@example.com', '+1-555-7777', ['Gaming Console', 'Game Controller']));
+clients.push(new Client(id.next().value, 'Isabella', 'Davis', 'isabella.davis@example.com', '+1-555-8888', ['Speakers', 'Microphone']));
+clients.push(new Client(id.next().value, 'Benjamin', 'Rodriguez', 'benjamin.rodriguez@example.com', '+1-555-9999', ['E-Reader']));
+clients.push(new Client(id.next().value, 'Mia', 'Martinez', 'mia.martinez@example.com', '+1-555-1010', ['Vacuum Cleaner', 'Air Purifier']));
