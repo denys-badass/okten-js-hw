@@ -146,3 +146,58 @@ class Car {
         this.driver = driver;
     }
 }
+
+// Task 7.8
+// -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
+// Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+// За допомоги циклу знайти яка попелюшка повинна бути з принцом.
+// Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+class Cinderella {
+    constructor(name, age, footSize) {
+        this.name = name;
+        this.age = age;
+        this.footSize = footSize;
+    }
+}
+
+class Shoe {
+    constructor(color, size) {
+        this.color = color;
+        this.size = size;
+    }
+}
+
+class Prince {
+    constructor(name, age, shoe) {
+        this.name = name;
+        this.age = age;
+        this.shoe = shoe;
+    }
+}
+
+const cinderellas = [];
+cinderellas.push(new Cinderella('Ella', 19, 36));
+cinderellas.push(new Cinderella('Sophie', 21, 37));
+cinderellas.push(new Cinderella('Isabella', 18, 35));
+cinderellas.push(new Cinderella('Lily', 20, 36));
+cinderellas.push(new Cinderella('Charlotte', 22, 38));
+cinderellas.push(new Cinderella('Amelia', 19, 37));
+cinderellas.push(new Cinderella('Grace', 23, 39));
+cinderellas.push(new Cinderella('Grace', 23, 39));
+cinderellas.push(new Cinderella('Emma', 20, 35));
+cinderellas.push(new Cinderella('Olivia', 21, 36));
+cinderellas.push(new Cinderella('Ava', 18, 34));
+
+const randomSize = Math.floor(Math.random() * 6) + 34;
+
+const cinderellasShoe = new Shoe('red', randomSize);
+const prince = new Prince('Elvis', 25, cinderellasShoe);
+
+for (const cinderella of cinderellas) {
+    if (cinderella.footSize === prince.shoe.size) {
+        console.log(cinderella);
+        break;
+    }
+}
+
+const targetCinderella = cinderellas.find(cinderella => cinderella.footSize === prince.shoe.size);
