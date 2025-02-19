@@ -212,9 +212,11 @@ Array.prototype.myForEach = function (callback) {
 };
 
 Array.prototype.myFilter = function (predicate) {
+    const filtered = [];
     for (const value of this) {
         if (predicate(value)) {
-            return value;
+            filtered.push(value);
         }
     }
+    return filtered;
 };
