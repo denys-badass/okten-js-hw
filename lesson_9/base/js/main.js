@@ -18,3 +18,17 @@ body.appendChild(firstWrapper);
 const secondWrapper = firstWrapper.cloneNode(true);
 
 body.appendChild(secondWrapper);
+
+// Task 9.2
+// - Є масив:
+// Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
+const pages = ['Main','Products','About us','Contacts'];
+const navList = document.createElement('ul');
+
+for (const page of pages) {
+    const li = document.createElement('li');
+    li.innerText = page;
+    navList.appendChild(li);
+}
+
+body.appendChild(navList);
