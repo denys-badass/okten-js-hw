@@ -8,7 +8,7 @@
 // - клонувати його повністю, та додати клон в body.
 const body = document.body;
 const firstWrapper = document.createElement('div');
-firstWrapper.classList.add('wrap', 'collapse', 'alpha', 'beta');
+firstWrapper.className = 'wrap, collapse, alpha, beta';
 firstWrapper.style.background = 'cyan';
 firstWrapper.style.color = 'gray';
 firstWrapper.style.fontSize = '18px';
@@ -22,7 +22,7 @@ body.appendChild(secondWrapper);
 // Task 9.2
 // - Є масив:
 // Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li)
-const pages = ['Main','Products','About us','Contacts'];
+const pages = ['Main', 'Products', 'About us', 'Contacts'];
 const navList = document.createElement('ul');
 
 for (const page of pages) {
@@ -49,5 +49,23 @@ const coursesAndDurationArray = [
 for (const course of coursesAndDurationArray) {
     const courseDiv = document.createElement('div');
     courseDiv.innerText = `${course.title} - ${course.monthDuration}`;
+    body.appendChild(courseDiv);
+}
+
+// Task 9.4
+// - Є масив
+// За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,
+// в якому буде <h1 class='heading'>  з title  елементу, та <p class='description'> з monthDuration елементу.
+// Завдання робити через цикли.
+for (const course of coursesAndDurationArray) {
+    const courseDiv = document.createElement('div');
+    const courseHeading = document.createElement('h1');
+    const courseDescription = document.createElement('p');
+    courseDiv.className = 'item';
+    courseHeading.className = 'heading';
+    courseDescription.className = 'description';
+    courseHeading.innerText = `${course.title}`;
+    courseDescription.innerText = `${course.monthDuration}`;
+    courseDiv.append(courseHeading, courseDescription);
     body.appendChild(courseDiv);
 }
