@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    padding: 50px 0;
+}
+
+.course {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: #989898 solid 1px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.duration-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+}
+
+.course-title {
+    text-align: center;
+}
+
+li {
+    margin-left: 20px;
+}
