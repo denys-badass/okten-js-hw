@@ -109,3 +109,21 @@ for (const course of coursesArray) {
     courseDiv.append(title, durationContainer, modules);
     wrapper.appendChild(courseDiv);
 }
+
+// Task Additional MixKit
+function MixKit(title, author, mp3) {
+    this.title = title;
+    this.author = author;
+    this.mp3 = mp3;
+}
+
+const mixKitArr = [];
+
+const itemGridCards = document.querySelectorAll('.item-grid-card');
+
+for (const gridCard of itemGridCards) {
+    const title = gridCard.querySelector('.item-grid-card__title').innerText;
+    const author = gridCard.querySelector('.item-grid-music-preview__author').innerText.slice(3);
+    const mp3 = gridCard.children[0].getAttribute('data-audio-player-preview-url-value');
+    mixKitArr.push(new MixKit(title, author, mp3));
+}

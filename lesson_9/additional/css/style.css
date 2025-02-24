@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.item-grid__items {
+    display: none !important;
+}
+
 .wrapper {
     width: 1000px;
     margin: 0 auto;
