@@ -18,3 +18,19 @@
     height: 100px;
     margin-top: 20px;
 }
+
+form {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+}
+
+#users {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}

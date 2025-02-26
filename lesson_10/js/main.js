@@ -22,3 +22,30 @@ ageCheckBtn.onclick = function () {
     const age = +ageInput.value;
     result.innerText = age > 18 ? 'You age greater than 18' : 'You age less than 18';
 }
+
+// Task 10.3
+// Стоврити форму з трьома полями для name,sruname,age та кнопкою.
+// При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ.
+// Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+const usersDiv = document.getElementById('users');
+const userInfoForm = document.forms['user-info'];
+const userName = userInfoForm.name;
+const userSurname = userInfoForm.surname;
+const userAge = userInfoForm.age;
+// const submitBtn = userInfoForm['submit-user-info'];
+
+userInfoForm.onsubmit = function (ev) {
+    ev.preventDefault();
+    const userDiv = document.createElement('div');
+    const nameP = document.createElement('p');
+    const surnameP = document.createElement('p');
+    const ageP = document.createElement('p');
+    userDiv.classList.add('user-div');
+    
+    nameP.innerText = `Name: ${userName.value}`;
+    surnameP.innerText = `Surname: ${userSurname.value}`;
+    ageP.innerText = `Age: ${userAge.value}`;
+    
+    userDiv.append(nameP, surnameP, ageP);
+    usersDiv.appendChild(userDiv);
+}
