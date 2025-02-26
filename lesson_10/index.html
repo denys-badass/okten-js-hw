@@ -13,6 +13,17 @@
 зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".-->
 <p id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, nulla.</p>
 <button id="hide-btn">Hide!</button>
+
+<!--- створити інпут який приймає вік людини та кнопку яка підтверджує дію.
+При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18,
+та повідомити про це користувача-->
+<div id="age-checker">
+    <p id="result"></p>
+    <label for="age-input">Enter your age</label>
+    <input type="number" id="age-input" min="1" max="120">
+    <button id="check-age-btn">Check your age</button>
+</div>
+
 <script src="js/main.js"></script>
 </body>
 </html>
