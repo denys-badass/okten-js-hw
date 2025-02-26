@@ -3,3 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+#text {
+    width: 100px;
+    height: 100px;
+}
+
+#hide-btn {
+    width: 100px;
+}
