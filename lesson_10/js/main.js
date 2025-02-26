@@ -48,3 +48,19 @@ userInfoForm.onsubmit = function (ev) {
     userDiv.append(nameP, surnameP, ageP);
     usersDiv.appendChild(userDiv);
 }
+
+// Task 10.4
+// є сторінка, на якій є блок, я кому знаходиьтся цифра.
+// написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
+let counter = localStorage.getItem('counter') ?? 1;
+const counterDiv = document.createElement('div');
+counterDiv.innerText = counter;
+document.body.appendChild(counterDiv);
+
+
+document.onreadystatechange = function () {
+    if (document.readyState === 'complete') {
+        counter++;
+        localStorage.setItem('counter', counter);
+    }
+}
