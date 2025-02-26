@@ -32,7 +32,6 @@ const userInfoForm = document.forms['user-info'];
 const userName = userInfoForm.name;
 const userSurname = userInfoForm.surname;
 const userAge = userInfoForm.age;
-// const submitBtn = userInfoForm['submit-user-info'];
 
 userInfoForm.onsubmit = function (ev) {
     ev.preventDefault();
