@@ -72,9 +72,11 @@ document.onreadystatechange = function () {
 // при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html.
 // Інфу НЕ виводити в консоль, а малювати в DOM
 document.addEventListener('readystatechange', () => {
-    const sessionsList = JSON.parse(localStorage.getItem('sessionsList')) ?? [];
-    sessionsList.push(new Date());
-    localStorage.setItem('sessionsList', JSON.stringify(sessionsList));
+    if (document.readyState === 'complete') {
+        const sessionsList = JSON.parse(localStorage.getItem('sessionsList')) ?? [];
+        sessionsList.push(new Date());
+        localStorage.setItem('sessionsList', JSON.stringify(sessionsList));
+    }
 })
 
 // Task 10.6
