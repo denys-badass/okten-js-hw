@@ -121,3 +121,27 @@ tableMakerForm.onsubmit = function (ev) {
     }
     document.body.appendChild(table);
 }
+
+// Task 10.9
+// *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
+// при перезавантаженні сторінки до значаення додається по 10грн, але !!!
+//  зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
+//  При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
+let moneyCounter = JSON.parse(localStorage.getItem('money')) ?? 100;
+const moneyDiv = document.getElementById('money');
+
+document.addEventListener('readystatechange', () => {
+    if (document.readyState === 'complete') {
+        const sessions = JSON.parse(localStorage.getItem('sessionsList')) ?? [];
+        console.log(sessions)
+        if (sessions.length > 1) {
+            const nowSession = new Date(sessions[sessions.length - 1]).getTime();
+            const lastSession = new Date(sessions[sessions.length - 2]).getTime();
+            if (nowSession - lastSession >= 10_000) {
+                moneyCounter += 10;
+            }
+        }
+        moneyDiv.innerText = `Money: ${moneyCounter} грн`;
+        localStorage.setItem('money', moneyCounter);
+    }
+})
