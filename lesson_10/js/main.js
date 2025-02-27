@@ -90,3 +90,13 @@ kg.oninput = function () {
 lbs.oninput = function () {
     kg.value = Math.round(lbs.value * 0.45359237 * 100) / 100;
 }
+
+// Task 10.7
+// В localStorage зберігаються масиви. Вам потрібно зробити функцію, які дістає потрібний вам масив з localStorage та додає в нього об'єкт
+// сигнатура функції -
+// addToLocalStorage(arrayName:string,objToAdd:any{}):void
+const addToLocalStorage = (arrayName, objToAdd) => {
+    const arr = JSON.parse(localStorage.getItem(arrayName)) ?? [];
+    arr.push(objToAdd);
+    localStorage.setItem(arrayName, JSON.stringify(arr));
+}
