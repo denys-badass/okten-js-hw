@@ -34,3 +34,17 @@ form {
     flex-wrap: wrap;
     gap: 30px;
 }
+
+#converter {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+}
+
+.input-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}

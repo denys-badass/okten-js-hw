@@ -54,7 +54,7 @@ userInfoForm.onsubmit = function (ev) {
 // написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
 let counter = localStorage.getItem('counter') ?? 1;
 const counterDiv = document.createElement('div');
-counterDiv.innerText = counter;
+counterDiv.innerText = `reloaded: ${counter}`;
 document.body.appendChild(counterDiv);
 
 
@@ -76,3 +76,17 @@ document.addEventListener('readystatechange', () => {
     sessionsList.push(new Date());
     localStorage.setItem('sessionsList', JSON.stringify(sessionsList));
 })
+
+// Task 10.6
+// створити конвертор ваги з кг в фунти. данні заповнюються через інпут.
+// При введенні даних обрахунок стається миттєво, без натискань додаткових кнопок
+const kg = document.getElementById('kg');
+const lbs = document.getElementById('lbs');
+
+kg.oninput = function () {
+    lbs.value = Math.round(kg.value * 2.2046226218 * 100) / 100;
+}
+
+lbs.oninput = function () {
+    kg.value = Math.round(lbs.value * 0.45359237 * 100) / 100;
+}
