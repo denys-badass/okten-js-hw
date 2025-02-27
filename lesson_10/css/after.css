@@ -5,3 +5,17 @@
     border: 2px solid #716f6f;
     border-radius: 10px;
 }
+
+table, td {
+    border: #716f6f 1px solid;
+    border-collapse: collapse;
+}
+
+table {
+    margin: 10px;
+}
+
+td {
+    padding: 5px;
+}
+

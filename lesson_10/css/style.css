@@ -48,3 +48,10 @@ form {
     display: flex;
     justify-content: space-between;
 }
+
+#table-maker {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 10px;
+}
