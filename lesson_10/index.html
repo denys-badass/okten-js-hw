@@ -80,15 +80,19 @@
 
 <!-- Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.-->
-<form action="#" id="table-maker">
-    <label for="rows">Rows</label>
-    <input type="number" name="rows" id="rows" min="1" max="100">
-    <label for="cols">Columns</label>
-    <input type="number" name="cols" id="cols" min="1" max="100">
-    <label for="content">Content</label>
-    <input type="text" name="content" id="content">
-    <button>Make table</button>
-</form>
+<div class="task-wrapper">
+    <h2>Table maker</h2>
+    <form action="#" id="table-maker">
+        <label for="rows">Rows</label>
+        <input type="number" name="rows" id="rows" min="1" max="100">
+        <label for="cols">Columns</label>
+        <input type="number" name="cols" id="cols" min="1" max="100">
+        <label for="content">Content</label>
+        <input type="text" name="content" id="content">
+        <button>Make table</button>
+    </form>
+    <div id="table-content"></div>
+</div>
 
 <!--створити сторінку з довільним блоком, в середині якого є значення "100грн"
 при перезавантаженні сторінки до значаення додається по 10грн, але !!!

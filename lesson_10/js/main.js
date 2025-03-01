@@ -114,6 +114,7 @@ const addToLocalStorage = (arrayName, objToAdd) => {
 //  Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 // При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 const tableMakerForm = document.forms['table-maker'];
+const tableDiv = document.getElementById('table-content');
 tableMakerForm.onsubmit = function (ev) {
     ev.preventDefault();
     const table = document.createElement('table');
@@ -126,7 +127,7 @@ tableMakerForm.onsubmit = function (ev) {
         }
         table.appendChild(row);
     }
-    document.body.appendChild(table);
+    tableDiv.appendChild(table);
 }
 
 // Task 10.9

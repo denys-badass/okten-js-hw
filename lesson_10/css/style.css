@@ -83,10 +83,8 @@ form {
     gap: 6px;
 }
 
-
-
-#table-maker {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
+/*--------------- Task 10.8 ---------------*/
+#table-content {
+    width: 100%;
+    overflow: auto;
 }
