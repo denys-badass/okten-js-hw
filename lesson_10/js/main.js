@@ -70,18 +70,11 @@ userInfoForm.onsubmit = function (ev) {
 // Task 10.4
 // є сторінка, на якій є блок, я кому знаходиьтся цифра.
 // написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
-let counter = localStorage.getItem('counter') ?? 1;
-const counterDiv = document.createElement('div');
-counterDiv.innerText = `reloaded: ${counter}`;
-document.body.appendChild(counterDiv);
-
-
-document.onreadystatechange = function () {
-    if (document.readyState === 'complete') {
-        counter++;
-        localStorage.setItem('counter', counter);
-    }
-}
+let counter = JSON.parse(localStorage.getItem('counter')) ?? 0;
+const counterDiv = document.getElementById('counter');
+counter++;
+counterDiv.innerText = `Reloaded: ${counter}`;
+localStorage.setItem('counter', counter);
 
 // Task 10.5
 // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще,

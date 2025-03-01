@@ -39,15 +39,28 @@
 Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом-->
 <div class="task-wrapper">
     <form action="#" name="user-info">
-        <label for="name">Enter your name</label>
-        <input type="text" id="name">
-        <label for="surname">Enter your surname</label>
-        <input type="text" id="surname">
-        <label for="age">Enter your age</label>
-        <input type="number" id="age" min="1" max="120">
+        <div class="input-wrap">
+            <label for="name">Enter your name</label>
+            <input type="text" id="name">
+        </div>
+        <div class="input-wrap">
+            <label for="surname">Enter your surname</label>
+            <input type="text" id="surname">
+        </div>
+        <div class="input-wrap">
+            <label for="age">Enter your age</label>
+            <input type="number" id="age" min="1" max="120">
+        </div>
         <button>Add user</button>
     </form>
     <div id="cards"></div>
+</div>
+
+<!-- є сторінка, на якій є блок, я кому знаходиьтся цифра.
+написати код, який при кожному перезавантажені сторінки буде додавати до неї +1-->
+<div class="task-wrapper">
+    <h2>Reload counter</h2>
+    <div id="counter"></div>
 </div>
 
 <!--створити конвертор ваги з кг в фунти. данні заповнюються через інпут.
