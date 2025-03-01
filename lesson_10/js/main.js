@@ -82,13 +82,9 @@ localStorage.setItem('counter', counter);
 // Є  сторінка sessionsListPage.html (назва довільна),
 // при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html.
 // Інфу НЕ виводити в консоль, а малювати в DOM
-document.addEventListener('readystatechange', () => {
-    if (document.readyState === 'complete') {
-        const sessionsList = JSON.parse(localStorage.getItem('sessionsList')) ?? [];
-        sessionsList.push(new Date());
-        localStorage.setItem('sessionsList', JSON.stringify(sessionsList));
-    }
-})
+const sessionsList = JSON.parse(localStorage.getItem('sessionsList')) ?? [];
+sessionsList.push(new Date());
+localStorage.setItem('sessionsList', JSON.stringify(sessionsList));
 
 // Task 10.6
 // створити конвертор ваги з кг в фунти. данні заповнюються через інпут.
