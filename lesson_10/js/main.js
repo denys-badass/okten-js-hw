@@ -137,19 +137,18 @@ tableMakerForm.onsubmit = function (ev) {
 //  При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
 let moneyCounter = JSON.parse(localStorage.getItem('money')) ?? 100;
 const moneyDiv = document.getElementById('money');
+const sessions = JSON.parse(localStorage.getItem('sessionsList')) ?? [];
+const moneyContent = document.createElement('p')
 
-document.addEventListener('readystatechange', () => {
-    if (document.readyState === 'complete') {
-        const sessions = JSON.parse(localStorage.getItem('sessionsList')) ?? [];
-        console.log(sessions)
-        if (sessions.length > 1) {
-            const nowSession = new Date(sessions[sessions.length - 1]).getTime();
-            const lastSession = new Date(sessions[sessions.length - 2]).getTime();
-            if (nowSession - lastSession >= 10_000) {
-                moneyCounter += 10;
-            }
-        }
-        moneyDiv.innerText = `Money: ${moneyCounter} грн`;
-        localStorage.setItem('money', moneyCounter);
+console.log(sessions)
+if (sessions.length > 1) {
+    const nowSession = new Date(sessions[sessions.length - 1]).getTime();
+    const lastSession = new Date(sessions[sessions.length - 2]).getTime();
+    if (nowSession - lastSession >= 10_000) {
+        moneyCounter += 10;
     }
-})
+}
+
+moneyContent.innerText = `Money: ${moneyCounter} грн`;
+moneyDiv.appendChild(moneyContent);
+localStorage.setItem('money', moneyCounter);
