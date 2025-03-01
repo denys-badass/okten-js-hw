@@ -1,13 +1,13 @@
 .user-div {
-    width: 200px;
-    height: 100px;
+    width: 230px;
+    height: 140px;
     padding: 20px;
-    border: 2px solid #716f6f;
+    border: 2px solid #bcb7b7;
     border-radius: 10px;
 }
 
 table, td {
-    border: #716f6f 1px solid;
+    border: #bcb7b7 1px solid;
     border-collapse: collapse;
 }
 

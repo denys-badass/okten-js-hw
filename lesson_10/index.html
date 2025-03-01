@@ -33,24 +33,25 @@
     <button id="check-age-btn">Check your age</button>
     <p id="result"></p>
 </div>
-<hr>
 
 <!--Стоврити форму з трьома полями для name,sruname,age та кнопкою.
 При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ.
 Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом-->
-<form action="#" name="user-info">
-    <label for="name">Enter your name</label>
-    <input type="text" id="name">
-    <label for="surname">Enter your surname</label>
-    <input type="text" id="surname">
-    <label for="age">Enter your age</label>
-    <input type="number" id="age" min="1" max="120">
-    <button>Add user</button>
-</form>
+<div class="task-wrapper">
+    <form action="#" name="user-info">
+        <label for="name">Enter your name</label>
+        <input type="text" id="name">
+        <label for="surname">Enter your surname</label>
+        <input type="text" id="surname">
+        <label for="age">Enter your age</label>
+        <input type="number" id="age" min="1" max="120">
+        <button>Add user</button>
+    </form>
+    <div id="cards"></div>
+</div>
 
 <!--створити конвертор ваги з кг в фунти. данні заповнюються через інпут.
 При введенні даних обрахунок стається миттєво, без натискань додаткових кнопок-->
-<div id="users"></div>
 <div id="converter">
     <div class="input-wrap">
         <label for="kg">Kilograms</label>

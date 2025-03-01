@@ -35,6 +35,14 @@ label {
     color: #716f6f;
 }
 
+form {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+}
+
 .task-wrapper {
     width: 1200px;
     margin: 0 auto 20px auto;
@@ -66,21 +74,13 @@ label {
     font-weight: bold;
 }
 
-
-form {
-    width: 200px;
+/*--------------- Task 10.3 ----------------*/
+#cards {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 20px;
-}
-
-#users {
-    display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 6px;
 }
 
 #converter {
