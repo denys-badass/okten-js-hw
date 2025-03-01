@@ -912,14 +912,14 @@ const users = [
 let firstIndex = JSON.parse(localStorage.getItem('startIndex')) ?? 0;
 const numOfItems = 10;
 
-const usersDiv = document.getElementById('cards');
+const usersDiv = document.getElementById('show-cards');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 
 const cardHeaderCreator = (item) => {
     const cardHeader = document.createElement('div');
     cardHeader.classList.add('card-header');
-    const header = document.createElement('h2');
+    const header = document.createElement('h3');
     header.innerText = item.name;
     cardHeader.appendChild(header);
     
@@ -931,8 +931,8 @@ const jobInfoCreator = (item) => {
     jobInfo.classList.add('job-info');
     const jobTitle = document.createElement('p');
     const company = document.createElement('p');
-    jobTitle.innerText = `Job Title: ${item.jobTitle}`;
-    company.innerText = `Company: ${item.company}`;
+    jobTitle.innerHTML = `<i>Job Title:</i> ${item.jobTitle}`;
+    company.innerHTML = `<i>Company:</i> ${item.company}`;
     jobInfo.append(jobTitle, company);
     
     return jobInfo;
@@ -943,8 +943,8 @@ const cardFooterCreator = (item) => {
     cardFooter.classList.add('card-footer');
     const email = document.createElement('p');
     const phone = document.createElement('p');
-    email.innerText = `Email: ${item.email}`;
-    phone.innerText = `Phone: ${item.phone}`;
+    email.innerHTML = `<i>Email:</i> ${item.email}`;
+    phone.innerHTML = `<i>Phone:</i> ${item.phone}`;
     cardFooter.append(email, phone);
     
     return cardFooter;
@@ -988,11 +988,7 @@ const nextPagination = (arr) => {
     pagination(arr);
 }
 
-document.onreadystatechange = () => {
-    if (document.readyState === 'complete') {
-        pagination(users);
-    }
-}
+pagination(users);
 
 prevBtn.onclick = () => {
     prevPagination(users);
