@@ -93,11 +93,11 @@ const kg = document.getElementById('kg');
 const lbs = document.getElementById('lbs');
 
 kg.oninput = function () {
-    lbs.value = Math.round(kg.value * 2.2046226218 * 100) / 100;
+    lbs.value = Math.round(this.value * 2.2046226218 * 100) / 100;
 }
 
 lbs.oninput = function () {
-    kg.value = Math.round(lbs.value * 0.45359237 * 100) / 100;
+    kg.value = Math.round(this.value * 0.45359237 * 100) / 100;
 }
 
 // Task 10.7

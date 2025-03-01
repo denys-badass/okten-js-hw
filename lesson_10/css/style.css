@@ -83,14 +83,6 @@ form {
     gap: 6px;
 }
 
-#converter {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 20px;
-}
-
 
 
 #table-maker {
