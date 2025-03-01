@@ -7,7 +7,13 @@ const hideBtn = document.getElementById('hide-btn');
 const textForHide = document.getElementById('text');
 
 hideBtn.onclick = function () {
-    textForHide.style.display = 'none';
+    if (textForHide.style.display === 'none') {
+        hideBtn.innerText = 'Hide';
+        textForHide.style.display = 'block';
+    } else {
+        hideBtn.innerText = 'Show';
+        textForHide.style.display = 'none';
+    }
 }
 
 // Task 10.2
