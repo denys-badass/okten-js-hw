@@ -18,9 +18,26 @@ button {
     border-radius: 10px;
 }
 
+input {
+    border: #989898 solid 1px;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+    padding: 0 10px;
+}
+
+input:focus, input:active {
+    outline: none;
+}
+
+label {
+    font-size: 14px;
+    color: #716f6f;
+}
+
 .task-wrapper {
     width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -31,20 +48,24 @@ button {
     box-shadow: 8px 8px 4px -7px rgba(77,75,77,0.73);
 }
 
+.input-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/*--------------- Task 10.1 ---------------*/
 #text {
     width: 80%;
     text-align: center;
 }
 
-#hide-btn {
-    width: 100px;
+/*--------------- Task 10.2 ----------------*/
+#age-checker p {
+    height: 20px;
+    font-weight: bold;
 }
 
-#age-checker {
-    width: 200px;
-    height: 100px;
-    margin-top: 20px;
-}
 
 form {
     width: 200px;
@@ -70,11 +91,7 @@ form {
     margin: 20px;
 }
 
-.input-wrap {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
+
 
 #table-maker {
     display: flex;

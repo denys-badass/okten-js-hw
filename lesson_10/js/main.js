@@ -26,7 +26,13 @@ const result = document.getElementById('result');
 
 ageCheckBtn.onclick = function () {
     const age = +ageInput.value;
-    result.innerText = age > 18 ? 'You age greater than 18' : 'You age less than 18';
+    if (age > 18) {
+        result.style.color = '#64a869';
+        result.innerText = 'You age greater than 18';
+    } else {
+        result.style.color = '#912934';
+        result.innerText = 'You age less than or equal 18';
+    }
 }
 
 // Task 10.3
