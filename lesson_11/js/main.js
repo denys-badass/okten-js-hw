@@ -102,5 +102,11 @@ const accordionCreator = (cart) => {
     return accordionItem;
 }
 
-
+fetch(cartsURL)
+    .then(res => res.json())
+    .then(data => {
+        for (const cart of data.carts) {
+            accordionFlushDiv.appendChild(accordionCreator(cart));
+        }
+    });
 
