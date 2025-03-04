@@ -61,5 +61,46 @@ const productCreator = (product) => {
     return cartDiv;
 }
 
+const accordionBtnCreator = (cart, flushCollapse) => {
+    const nameBtn = document.createElement('button');
+    nameBtn.className = 'accordion-button collapsed';
+    nameBtn.setAttribute('data-bs-toggle', 'collapse');
+    nameBtn.setAttribute('data-bs-target', `#${flushCollapse}`);
+    nameBtn.setAttribute('aria-expanded', 'false');
+    nameBtn.setAttribute('aria-controls', flushCollapse);
+    nameBtn.id = `user-${cart.userId}`;
+    nameBtn.innerText = `user-${cart.userId}`;
+    
+    return nameBtn;
+}
+
+const accordionBodyCreator = (cart, flushCollapse) => {
+    const collapseDiv = document.createElement('div');
+    collapseDiv.className = 'accordion-collapse collapse';
+    collapseDiv.id = flushCollapse;
+    collapseDiv.setAttribute('data-bs-parent', '#accordionFlush');
+    const bodyDiv = document.createElement('div');
+    bodyDiv.className = 'accordion-body';
+    
+    for (const product of cart.products) {
+        bodyDiv.appendChild(productCreator(product));
+    }
+    
+    collapseDiv.appendChild(bodyDiv);
+    
+    return collapseDiv;
+}
+
+const accordionCreator = (cart) => {
+    const flushCollapse = `flush-collapse-${cart.id}`;
+    const accordionItem = document.createElement('div');
+    accordionItem.className = 'accordion-item';
+    
+    accordionItem.appendChild(accordionBtnCreator(cart, flushCollapse));
+    accordionItem.appendChild(accordionBodyCreator(cart, flushCollapse));
+    
+    return accordionItem;
+}
+
 
 
