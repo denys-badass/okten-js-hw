@@ -2,14 +2,11 @@
 
 // Task 11.1
 // - взяти https://dummyjson.com/docs/carts та вивести інформацію про всі корзини. Відобразити всі поля кожної корзини.
-const cartsURL = 'https://dummyjson.com/carts';
-const usersURL = 'https://dummyjson.com/users';
+const cartsURL = new URL('https://dummyjson.com/carts');
+const usersURL = new URL('https://dummyjson.com/users');
 
-fetch('https://dummyjson.com/carts')
-    .then(res => res.json())
-    .then(data => {
-        localStorage.setItem('carts', JSON.stringify(data.total));
-    })
+cartsURL.searchParams.set('limit', '0');
+usersURL.searchParams.set('limit', '0');
 
 const accordionFlushDiv = document.getElementById('accordionFlush');
 
@@ -63,13 +60,11 @@ const productCreator = (product) => {
 
 const accordionBtnCreator = (cart, flushCollapse) => {
     const nameBtn = document.createElement('button');
-    nameBtn.className = 'accordion-button collapsed';
+    nameBtn.className = `accordion-button collapsed user-${cart.userId}`;
     nameBtn.setAttribute('data-bs-toggle', 'collapse');
     nameBtn.setAttribute('data-bs-target', `#${flushCollapse}`);
     nameBtn.setAttribute('aria-expanded', 'false');
     nameBtn.setAttribute('aria-controls', flushCollapse);
-    nameBtn.id = `user-${cart.userId}`;
-    nameBtn.innerText = `user-${cart.userId}`;
     
     return nameBtn;
 }
@@ -109,4 +104,18 @@ fetch(cartsURL)
             accordionFlushDiv.appendChild(accordionCreator(cart));
         }
     });
+
+fetch(usersURL)
+    .then(res => res.json())
+    .then(data => {
+        for (const user of data.users) {
+            const elems = document.getElementsByClassName(`user-${user.id}`);
+            console.log(elems);
+            if (elems.length > 0) {
+                for (const elem of elems) {
+                    elem.innerText = `${user.firstName} ${user.lastName}`;
+                }
+            }
+        }
+    })
 
