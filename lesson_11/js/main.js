@@ -15,6 +15,10 @@ const imgBlockCreator = (url, alt) => {
     imgBlock.classList.add('img-block');
     const img = document.createElement('img');
     img.src = url;
+    img.addEventListener('error', (e) => {
+        e.target.src = 'img/product-placeholder.jpg';
+        e.onerror = null;
+    })
     img.alt = alt;
     imgBlock.appendChild(img);
     
@@ -60,11 +64,15 @@ const productCreator = (product) => {
 
 const accordionBtnCreator = (cart, flushCollapse) => {
     const nameBtn = document.createElement('button');
-    nameBtn.className = `accordion-button collapsed user-${cart.userId}`;
+    nameBtn.className = 'accordion-button collapsed';
     nameBtn.setAttribute('data-bs-toggle', 'collapse');
     nameBtn.setAttribute('data-bs-target', `#${flushCollapse}`);
     nameBtn.setAttribute('aria-expanded', 'false');
     nameBtn.setAttribute('aria-controls', flushCollapse);
+    const orderSpan = document.createElement('span');
+    orderSpan.className = `user-${cart.userId}`;
+    nameBtn.innerHTML = `<i>Order#${cart.id} by&nbsp</i>`;
+    nameBtn.appendChild(orderSpan);
     
     return nameBtn;
 }
