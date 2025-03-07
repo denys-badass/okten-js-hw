@@ -6,9 +6,64 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task 11.2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<h1>Recipes</h1>
+<div class="recipe-wrapper">
+    <div class="recipe-header">
+        <p class="badge" id="badge"></p>
+        <ul class="categories" id="categories"></ul>
+    </div>
+    <h2 class="recipe-title" id="recipe-title"></h2>
+    <div class="tags" id="tags"></div>
+    <div class="rating">
+        <div class="stars" id="stars"></div>
+        <div class="reviews" id="reviews"></div>
+    </div>
+    <img src="" alt="" id="recipe-img">
+    <div class="details">
+        <div id="prep-time">
+            <img src="" alt="" id="prep-time-img">
+            <p id="prep-time-desc"></p>
+        </div>
+        <div id="cook-time">
+            <img src="" alt="" id="cook-time-img">
+            <p id="cook-time-desc"></p>
+        </div>
+        <div id="servings">
+            <img src="" alt="" id="servings-img">
+            <p id="servings-desc"></p>
+        </div>
+        <div id="difficult">
+            <img src="" alt="" id="difficult-img">
+            <p id="difficult-desc"></p>
+        </div>
+        <div id="cuisines">
+            <img src="" alt="" id="cuisines-img">
+            <p id="cuisines-desc"></p>
+        </div>
+        <div id="calories">
+            <img src="" alt="" id="calories-img">
+            <p id="calories-desc"></p>
+        </div>
+    </div>
+    <h3>Ingredients:</h3>
+    <ul class="ingredients" id="ingredients"></ul>
+    <h3>Instructions:</h3>
+    <ol class="instructions" id="instructions"></ol>
+</div>
+<div class="btn-wrapper">
+    <button id="prev-btn">&lt Prev</button>
+    <button id="next-btn">Next &gt</button>
+</div>
 <script src="js/main.js"></script>
 </body>
 </html>
