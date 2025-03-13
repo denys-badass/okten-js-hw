@@ -185,7 +185,7 @@ if (day >= 1 && day <= 10) {
 // - Скласти розклад на тиждень за домопоги switch.
 // Користувач вводить порядковий номер дня тижня і на екрані відображається інфа що заплановано на цей день
 // (можна замість плану на день, назву дня англійською).
-let dayOfWeek: number = +prompt("Enter the day of week");
+let dayOfWeek: number = Number(prompt("Enter the day of week") ?? 0);
 
 switch (dayOfWeek) {
     case 1:
@@ -218,8 +218,8 @@ switch (dayOfWeek) {
 // - Користувач вводить або має два числа.
 // Потрібно знайти та вивести максимальне число з тих двох .
 // Також потрібно врахувати коли введені рівні числа.
-let firstNum: number = +prompt("Enter the first number");
-let secondNum: number = +prompt("Enter the second number");
+let firstNum: number = Number(prompt("Enter the first number") ?? 0);
+let secondNum: number = Number(prompt("Enter the second number") ?? 0);
 
 if (firstNum < secondNum) {
     console.log(secondNum);
