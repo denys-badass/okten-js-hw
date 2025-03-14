@@ -1,5 +1,28 @@
-"use strict";
-const posts = [
+// За допомогою циклу вивести всю інформацію про пости використовуючи шаблон Template 1.1.
+// <!--template 1.1-->
+// <div class="wrap">
+//   <div class="post-card">
+//     <h3>ID - TITLE</h3>
+//     <p>BODY</p>
+//   </div>
+//
+//   <!--
+//   ...
+//   ...
+//   ...
+//   other posts
+//   -->
+//
+// </div>
+// ЗА допомоги стилів побудувати структуру "сітки" по 5 об'єктів в лінію
+type Post = {
+    userId: number;
+    id: number;
+    title: string;
+    body: string;
+}
+
+const posts: Post[] = [
     {
         userId: 1,
         id: 1,
@@ -901,11 +924,15 @@ const posts = [
             'accusamus ratione error aut'
     }
 ];
+
+
 document.write('<div class="wrap">');
+
 for (const post of posts) {
     document.write(`<div class="post-card">
         <h3>${post.id} - ${post.title}</h3>
         <p>${post.body}</p>
     </div>`);
 }
+
 document.write('</div>');
