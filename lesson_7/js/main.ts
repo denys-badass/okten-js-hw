@@ -1,9 +1,14 @@
-"use strict";
 // Task 7.1
 // Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
 // створити пустий масив, наповнити його 10 об'єктами new User(....)
 class User {
-    constructor(id, name, surname, email, phone) {
+    id: number;
+    name: string;
+    surname: string;
+    email: string;
+    phone: string;
+    
+    constructor(id: number, name: string, surname: string, email: string, phone: string) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -11,13 +16,16 @@ class User {
         this.phone = phone;
     }
 }
-function* idGen(num) {
-    for (let i = 1; i <= num; i++) {
+
+function* idGen(num: number): Generator<number> {
+    for (let i:number = 1; i <= num; i++) {
         yield i;
     }
 }
-const id = idGen(Number.MAX_SAFE_INTEGER);
-const users = [];
+
+const id: Generator<number> = idGen(Number.MAX_SAFE_INTEGER);
+
+const users: User[] = [];
 users.push(new User(id.next().value, 'John', 'Smith', 'john.smith@example.com', '+1-555-1234'));
 users.push(new User(id.next().value, 'Emma', 'Johnson', 'emma.johnson@example.com', '+1-555-5678'));
 users.push(new User(id.next().value, 'Michael', 'Brown', 'michael.brown@example.com', '+1-555-9101'));
@@ -28,17 +36,27 @@ users.push(new User(id.next().value, 'William', 'Anderson', 'william.anderson@ex
 users.push(new User(id.next().value, 'Ava', 'Thomas', 'ava.thomas@example.com', '+1-555-9202'));
 users.push(new User(id.next().value, 'James', 'Hernandez', 'james.hernandez@example.com', '+1-555-1223'));
 users.push(new User(id.next().value, 'Isabella', 'Moore', 'isabella.moore@example.com', '+1-555-3243'));
+
 // Task 7.2
 // - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
-const filteredUsers = users.filter((user) => user.id % 2 === 0);
+const filteredUsers: User[] = users.filter((user: User): boolean => user.id % 2 === 0);
+
 // Task 7.3
 // - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
-users.sort((a, b) => a.id - b.id);
+users.sort((a: User, b: User): number => a.id - b.id);
+
 // Task 7.4
 // - створити конструктор для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
 // створити пустий масив, наповнити його 10 об'єктами Client
 class Client {
-    constructor(id, name, surname, email, phone, order) {
+    id: number;
+    name: string;
+    surname: string;
+    email: string;
+    phone: string;
+    order: string[];
+    
+    constructor(id: number, name: string, surname: string, email: string, phone: string, order: string[]) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -47,7 +65,8 @@ class Client {
         this.order = order;
     }
 }
-const clients = [];
+
+const clients: Client[] = [];
 clients.push(new Client(id.next().value, 'Liam', 'Brown', 'liam.brown@example.com', '+1-555-1111', ['Laptop', 'Mouse']));
 clients.push(new Client(id.next().value, 'Emma', 'Smith', 'emma.smith@example.com', '+1-555-2222', ['Phone', 'Headphones']));
 clients.push(new Client(id.next().value, 'Noah', 'Johnson', 'noah.johnson@example.com', '+1-555-3333', ['Tablet', 'Smartwatch']));
@@ -58,10 +77,12 @@ clients.push(new Client(id.next().value, 'James', 'Miller', 'james.miller@exampl
 clients.push(new Client(id.next().value, 'Isabella', 'Davis', 'isabella.davis@example.com', '+1-555-8888', ['Speakers', 'Microphone']));
 clients.push(new Client(id.next().value, 'Benjamin', 'Rodriguez', 'benjamin.rodriguez@example.com', '+1-555-9999', ['E-Reader']));
 clients.push(new Client(id.next().value, 'Mia', 'Martinez', 'mia.martinez@example.com', '+1-555-1010', ['Vacuum Cleaner', 'Air Purifier']));
+
 // Task 7.5
 // - Взяти масив (Client [] з попереднього завдання).
 // Відсортувати його по кількості товарів в полі order по зростанню. (sort)
-clients.sort((a, b) => a.order.length - b.order.length);
+clients.sort((a: Client, b: Client): number => a.order.length - b.order.length);
+
 // Task 7.6
 // - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску,
 // максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
@@ -70,6 +91,7 @@ clients.sort((a, b) => a.order.length - b.order.length);
 //     -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 //     -- changeYear (newValue) - змінює рік випуску на значення newValue
 //     -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
+
 // function Car(model, manufacturer, releaseYear, maxSpeed, engineVolume) {
 //     this.model = model;
 //     this.manufacturer = manufacturer;
@@ -99,6 +121,7 @@ clients.sort((a, b) => a.order.length - b.order.length);
 // Car.prototype.addDriver = function (driver) {
 //     this.driver = driver;
 // };
+
 // Task 7.7
 // - (Те саме, тільки через клас)
 // Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
@@ -108,57 +131,84 @@ clients.sort((a, b) => a.order.length - b.order.length);
 //     -- changeYear (newValue) - змінює рік випуску на значення newValue
 //     -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 class Car {
-    constructor(model, manufacturer, releaseYear, maxSpeed, engineVolume) {
+    model: string;
+    manufacturer: string;
+    releaseYear: number;
+    maxSpeed: number;
+    engineVolume: number;
+    driver?: string;
+    
+    constructor(model: string, manufacturer: string, releaseYear: number, maxSpeed: number, engineVolume: number) {
         this.model = model;
         this.manufacturer = manufacturer;
         this.releaseYear = releaseYear;
         this.maxSpeed = maxSpeed;
         this.engineVolume = engineVolume;
     }
-    drive() {
+
+    drive(): void {
         console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
     }
-    info() {
+
+    info(): void {
         for (const [key, value] of Object.entries(this)) {
             console.log(`${key} - ${JSON.stringify(value)}`);
         }
     }
-    increaseMaxSpeed(newSpeed) {
+
+    increaseMaxSpeed(newSpeed: number): void {
         this.maxSpeed += newSpeed;
     }
-    changeYear(newValue) {
+
+    changeYear(newValue: number): void {
         this.releaseYear = newValue;
     }
-    addDrive(driver) {
+
+    addDrive(driver: string): void {
         this.driver = driver;
     }
 }
+
 // Task 7.8
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
 // За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 // Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 class Cinderella {
-    constructor(name, age, footSize) {
+    name: string;
+    age: number;
+    footSize: number;
+    
+    constructor(name: string, age: number, footSize: number) {
         this.name = name;
         this.age = age;
         this.footSize = footSize;
     }
 }
+
 class Shoe {
-    constructor(color, size) {
+    color: string;
+    size: number;
+    
+    constructor(color: string, size: number) {
         this.color = color;
         this.size = size;
     }
 }
+
 class Prince {
-    constructor(name, age, shoe) {
+    name: string;
+    age: number;
+    shoe: Shoe;
+    
+    constructor(name: string, age: number, shoe: Shoe) {
         this.name = name;
         this.age = age;
         this.shoe = shoe;
     }
 }
-const cinderellas = [];
+
+const cinderellas: Cinderella[] = [];
 cinderellas.push(new Cinderella('Ella', 19, 36));
 cinderellas.push(new Cinderella('Sophie', 21, 37));
 cinderellas.push(new Cinderella('Isabella', 18, 35));
@@ -170,24 +220,36 @@ cinderellas.push(new Cinderella('Grace', 23, 39));
 cinderellas.push(new Cinderella('Emma', 20, 35));
 cinderellas.push(new Cinderella('Olivia', 21, 36));
 cinderellas.push(new Cinderella('Ava', 18, 34));
-const randomSize = Math.floor(Math.random() * 6) + 34;
+
+const randomSize: number = Math.floor(Math.random() * 6) + 34;
+
 const cinderellasShoe = new Shoe('red', randomSize);
 const prince = new Prince('Elvis', 25, cinderellasShoe);
+
 for (const cinderella of cinderellas) {
     if (cinderella.footSize === prince.shoe.size) {
         console.log(cinderella);
         break;
     }
 }
-const targetCinderella = cinderellas.find((cinderella) => cinderella.footSize === prince.shoe.size);
-Array.prototype.myForEach = function (callback) {
-    for (let i = 0; i < this.length; i++) {
-        const value = this[i];
+
+const targetCinderella: Cinderella | undefined = cinderellas.find((cinderella: Cinderella): boolean => cinderella.footSize === prince.shoe.size);
+
+// Task 7.9
+// *Через Array.prototype. створити власний foreach, filter
+interface Array<T> {
+    myForEach(callback: (value: T, index: number) => void): void;
+    myFilter(predicate: (value: T) => boolean): T[];
+}
+Array.prototype.myForEach = function<T> (callback: (value: T, i: number) => void): void {
+    for (let i: number = 0; i < this.length; i++) {
+        const value:T = this[i];
         callback(value, i);
     }
 };
-Array.prototype.myFilter = function (predicate) {
-    const filtered = [];
+
+Array.prototype.myFilter = function<T> (predicate: (value: T) => boolean): T[] {
+    const filtered: T[] = [];
     for (const value of this) {
         if (predicate(value)) {
             filtered.push(value);
