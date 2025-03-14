@@ -28,7 +28,7 @@ str = str.trim();
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
 //     let str = 'Ревуть воли як ясла повні';
 //     let arr = stringToarray(str); ['Ревуть', 'воли', 'як', 'ясла', 'повні']
-const stringToArray: (str: string) => string[] = (str: string): string[] => str.split(' ');
+const stringToArray = (str: string): string[] => str.split(' ');
 
 str = 'Ревуть воли як ясла повні';
 let arr: string[] = stringToArray(str);
@@ -44,7 +44,7 @@ let numbersAsStr: string[] = numbers.map(number => number + '');
 // let nums = [11,21,3];
 // sortNums(nums,'ascending') // [3,11,21]
 // sortNums(nums,'descending') // [21,11,3]
-const sortNums: (array: number[], direction: string) => void = (array: number[], direction: string): void => {
+const sortNums = (array: number[], direction: string): void => {
     if (direction === 'ascending') {
         array.sort((a, b) => a - b);
     } else if (direction === 'descending') {
@@ -68,14 +68,14 @@ const coursesAndDurationArray: Course[] = [
 ];
 
 //  -- відсортувати його за спаданням за monthDuration
-coursesAndDurationArray.sort((a: Course, b: Course): number => b.monthDuration - a.monthDuration);
+coursesAndDurationArray.sort((a, b) => b.monthDuration - a.monthDuration);
 
 //  -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
-const moreFiveMonthsCourses: Course[] = coursesAndDurationArray.filter((value: Course): boolean => value.monthDuration > 5);
+const moreFiveMonthsCourses: Course[] = coursesAndDurationArray.filter((value) => value.monthDuration > 5);
 
 //  -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
-type CourseWithId = Course & {id: number};
-const coursesWithId: CourseWithId[] = coursesAndDurationArray.map((value: Course, index: number): CourseWithId => {
+type CourseWithId = Course & { id: number };
+const coursesWithId: CourseWithId[] = coursesAndDurationArray.map((value, index): CourseWithId => {
     return {
         id: index + 1,
         title: value.title,
@@ -99,7 +99,7 @@ type Card = {
 const cardSuits: string[] = ['spade', 'diamond', 'heart', 'clubs'];
 const cardValues: string[] = ['6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
-const cardDeckFiller: (suits: string[], values: string[]) => Card[] = (suits: string[], values: string[]): Card[] => {
+const cardDeckFiller = (suits: string[], values: string[]): Card[] => {
     const deck: Card[] = [];
     for (const suit of suits) {
         if (suit === 'spade' || suit === 'clubs') {
@@ -119,19 +119,19 @@ const cardDeckFiller: (suits: string[], values: string[]) => Card[] = (suits: st
 const cardDeck: Card[] = cardDeckFiller(cardSuits, cardValues);
 
 //  - знайти піковий туз
-const spadeAce: Card | undefined = cardDeck.find(({value, cardSuit}: Card): boolean => value === 'A' && cardSuit === 'spade');
+const spadeAce: Card | undefined = cardDeck.find(({value, cardSuit}) => value === 'A' && cardSuit === 'spade');
 
 //  - всі шістки
-const cardsWithSixValue: Card[] = cardDeck.filter((card: Card) : boolean => card.value === '6');
+const cardsWithSixValue: Card[] = cardDeck.filter((card) => card.value === '6');
 
 //  - всі червоні карти
-const redCards: Card[] = cardDeck.filter((card: Card): boolean => card.color === 'red');
+const redCards: Card[] = cardDeck.filter((card) => card.color === 'red');
 
 //  - всі буби
-const diamondCards: Card[] = cardDeck.filter((card: Card): boolean => card.cardSuit === 'diamond');
+const diamondCards: Card[] = cardDeck.filter((card) => card.cardSuit === 'diamond');
 
 //  - всі трефи від 9 та більше
-const clubTopCards: Card[] = cardDeck.filter((card: Card): boolean => card.cardSuit === 'clubs' && (card.value >= '9' || card.value === '10'));
+const clubTopCards: Card[] = cardDeck.filter((card) => card.cardSuit === 'clubs' && (card.value >= '9' || card.value === '10'));
 
 // Task 6.10
 // Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
@@ -148,7 +148,7 @@ type Deck = {
     clubs: Card[];
 }
 
-const deckBySuit: Deck = cardDeck.reduce((acc: Deck, card: Card) : Deck => {
+const deckBySuit: Deck = cardDeck.reduce((acc: Deck, card: Card): Deck => {
     switch (card.cardSuit) {
         case 'spade':
             acc.spades.push(card);
@@ -168,7 +168,7 @@ const deckBySuit: Deck = cardDeck.reduce((acc: Deck, card: Card) : Deck => {
 
 // Task 6.11
 // взяти з arrays.js масив coursesArray
-type CourseWithModules = Course & {hourDuration: number, modules: string[]};
+type CourseWithModules = Course & { hourDuration: number, modules: string[] };
 
 const coursesArray: CourseWithModules[] = [
     {
@@ -241,7 +241,7 @@ const coursesArray: CourseWithModules[] = [
 ];
 
 // --написати пошук всіх об'єктів, в яких в modules є sass
-const coursesWithSass: CourseWithModules[] = coursesArray.filter((value: CourseWithModules): boolean => value.modules.includes('sass'));
+const coursesWithSass: CourseWithModules[] = coursesArray.filter((value)=> value.modules.includes('sass'));
 
 // --написати пошук всіх об'єктів, в яких в modules є docker
-const coursesWithDocker: CourseWithModules[] = coursesArray.filter((value: CourseWithModules): boolean => value.modules.includes('docker'));
+const coursesWithDocker: CourseWithModules[] = coursesArray.filter((value)=> value.modules.includes('docker'));
