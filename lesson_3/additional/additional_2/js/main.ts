@@ -1,5 +1,51 @@
-"use strict";
-let usersList = [
+// Task Additional 3.2.1
+// За допомогою циклу вивести всю інформацію про користувачів використовуючи шаблон Template 1.1
+//  за допомоги стилів, побудувати сітку по 2 об'єкта в лінію
+// Template 1.1
+// <div class="users-box">
+//     <div class="user-block">
+//         <h2>ID - NAME - USERNAME </h2>
+//         <h3>EMAIL - PHONE</h3>
+//         <div class="address-block">
+//             <p>City - ADDRESS.CITY</p>
+//             <p>Street - ADDRESS.STREET</p>
+//             <p>Suite - ADDRESS.SUITE</p>
+//             <p>Zip code - ADDRESS.ZIPCODE</p>
+//         </div>
+//     </div>
+//     <!--
+//         ...
+//         ...
+//         ...
+//         other users
+//     -->
+// </div>
+type Address = {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: {lat: string, lng: string};
+}
+
+type Company = {
+    name: string;
+    catchPhrase: string;
+    bs: string;
+}
+
+type User = {
+    id: number;
+    name: string;
+    username: string;
+    email: string;
+    address: Address;
+    phone: string;
+    website: string;
+    company: Company;
+}
+
+let usersList: User[] = [
     {
         id: 1,
         name: 'Leanne Graham',
@@ -233,7 +279,7 @@ let usersList = [
 ];
 document.write('<div class="users-box">');
 for (const user of usersList) {
-    const address = user.address;
+    const address: Address = user.address;
     document.write(`<div class="user-block">
         <h2>${user.id} - ${user.name} - ${user.username}</h2>
         <h3>${user.email} - ${user.phone}</h3>
