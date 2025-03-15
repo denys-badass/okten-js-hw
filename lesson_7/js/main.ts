@@ -7,7 +7,7 @@ class User {
     surname: string;
     email: string;
     phone: string;
-    
+
     constructor(id: number, name: string, surname: string, email: string, phone: string) {
         this.id = id;
         this.name = name;
@@ -18,7 +18,7 @@ class User {
 }
 
 function* idGen(num: number): Generator<number> {
-    for (let i:number = 1; i <= num; i++) {
+    for (let i: number = 1; i <= num; i++) {
         yield i;
     }
 }
@@ -39,11 +39,11 @@ users.push(new User(id.next().value, 'Isabella', 'Moore', 'isabella.moore@exampl
 
 // Task 7.2
 // - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
-const filteredUsers: User[] = users.filter((user: User): boolean => user.id % 2 === 0);
+const filteredUsers: User[] = users.filter((user) => user.id % 2 === 0);
 
 // Task 7.3
 // - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
-users.sort((a: User, b: User): number => a.id - b.id);
+users.sort((a, b) => a.id - b.id);
 
 // Task 7.4
 // - створити конструктор для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
@@ -55,7 +55,7 @@ class Client {
     email: string;
     phone: string;
     order: string[];
-    
+
     constructor(id: number, name: string, surname: string, email: string, phone: string, order: string[]) {
         this.id = id;
         this.name = name;
@@ -81,7 +81,7 @@ clients.push(new Client(id.next().value, 'Mia', 'Martinez', 'mia.martinez@exampl
 // Task 7.5
 // - Взяти масив (Client [] з попереднього завдання).
 // Відсортувати його по кількості товарів в полі order по зростанню. (sort)
-clients.sort((a: Client, b: Client): number => a.order.length - b.order.length);
+clients.sort((a, b) => a.order.length - b.order.length);
 
 // Task 7.6
 // - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску,
@@ -137,7 +137,7 @@ class Car {
     maxSpeed: number;
     engineVolume: number;
     driver?: string;
-    
+
     constructor(model: string, manufacturer: string, releaseYear: number, maxSpeed: number, engineVolume: number) {
         this.model = model;
         this.manufacturer = manufacturer;
@@ -178,7 +178,7 @@ class Cinderella {
     name: string;
     age: number;
     footSize: number;
-    
+
     constructor(name: string, age: number, footSize: number) {
         this.name = name;
         this.age = age;
@@ -189,7 +189,7 @@ class Cinderella {
 class Shoe {
     color: string;
     size: number;
-    
+
     constructor(color: string, size: number) {
         this.color = color;
         this.size = size;
@@ -200,7 +200,7 @@ class Prince {
     name: string;
     age: number;
     shoe: Shoe;
-    
+
     constructor(name: string, age: number, shoe: Shoe) {
         this.name = name;
         this.age = age;
@@ -239,16 +239,18 @@ const targetCinderella: Cinderella | undefined = cinderellas.find((cinderella: C
 // *Через Array.prototype. створити власний foreach, filter
 interface Array<T> {
     myForEach(callback: (value: T, index: number) => void): void;
+
     myFilter(predicate: (value: T) => boolean): T[];
 }
-Array.prototype.myForEach = function<T> (callback: (value: T, i: number) => void): void {
+
+Array.prototype.myForEach = function <T>(callback: (value: T, i: number) => void): void {
     for (let i: number = 0; i < this.length; i++) {
-        const value:T = this[i];
+        const value: T = this[i];
         callback(value, i);
     }
 };
 
-Array.prototype.myFilter = function<T> (predicate: (value: T) => boolean): T[] {
+Array.prototype.myFilter = function <T>(predicate: (value: T) => boolean): T[] {
     const filtered: T[] = [];
     for (const value of this) {
         if (predicate(value)) {
