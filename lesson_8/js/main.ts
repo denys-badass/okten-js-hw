@@ -1,12 +1,10 @@
-"use strict";
 // Task 8.1
 // Створити функцію, яка робить глибоку копію об'єкту.
 // Додати перевірки на undefined, null, NaN.
 // Подумати і реалізувати логіку, в якій кінцевий об'єкт буде мати функції,які в нього були до цього моменту.
-const deepCopy = (obj) => {
+const deepCopy = (obj: any): any => {
     if (typeof obj !== 'object') {
-        if (typeof obj === 'number' && isNaN(obj))
-            return NaN;
+        if (typeof obj === 'number' && isNaN(obj)) return NaN;
         return obj;
     }
     if (obj instanceof Array) {
@@ -21,18 +19,33 @@ const deepCopy = (obj) => {
     if (obj instanceof Date) {
         return new Date(obj.getTime());
     }
-    const copy = Object.create(obj);
+
+    const copy: any = Object.create(obj);
     for (const item in obj) {
         copy[item] = typeof obj[item] == 'object' ? deepCopy(obj[item]) : obj[item];
     }
+
     return copy;
-};
-let coursesAndDurationArray = [
-    { title: 'JavaScript Complex', monthDuration: 5 },
-    { title: 'Java Complex', monthDuration: 6 },
-    { title: 'Python Complex', monthDuration: 6 },
-    { title: 'QA Complex', monthDuration: 4 },
-    { title: 'FullStack', monthDuration: 7 },
-    { title: 'Frontend', monthDuration: 4 }
+}
+
+// Task 8.2
+// - є масив
+// за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration
+// Зробити все ВИКЛЮЧНО за допомоги інлайн конструкції
+type Course = {
+    title: string;
+    monthDuration: number;
+}
+
+type CourseWithID = Course & {id: number};
+
+let coursesAndDurationArray: Course[] = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
 ];
-const coursesWithId = coursesAndDurationArray.map((value, index) => ({ id: index + 1, ...value }));
+
+const coursesWithId: CourseWithID[] = coursesAndDurationArray.map((value, index) => ({id: index + 1, ...value}));
