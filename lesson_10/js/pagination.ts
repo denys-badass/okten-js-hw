@@ -1,5 +1,20 @@
-"use strict";
-const users = [
+// Task 10.10
+// ***PAGINATION
+// зробити масив на 100 об'єктів та дві кнопки prev next
+// при завантажені сторінки з'являються перші 10 об'єктів.
+// При натисканні next виводяться наступні 10 об'єктів
+// При натисканні prev виводяться попередні 10 об'єктів
+type UserType = {
+    id: number;
+    name: string;
+    email: string;
+    phone: string;
+    address: string;
+    company: string;
+    jobTitle: string;
+}
+
+const users: UserType[] = [
     {
         id: 1,
         name: 'Joseph Fleming',
@@ -901,73 +916,92 @@ const users = [
         jobTitle: 'Sports coach'
     }
 ];
-let firstIndex = JSON.parse(localStorage.getItem('startIndex') ?? '0');
-const numOfItems = 10;
-const usersDiv = document.getElementById('show-cards');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-const cardHeaderCreator = (item) => {
-    const cardHeader = document.createElement('div');
+
+let firstIndex: number = JSON.parse(localStorage.getItem('startIndex') ?? '0');
+const numOfItems: number = 10;
+
+const usersDiv: HTMLDivElement = document.getElementById('show-cards') as HTMLDivElement;
+const prevBtn: HTMLButtonElement = document.getElementById('prev') as HTMLButtonElement;
+const nextBtn: HTMLButtonElement = document.getElementById('next') as HTMLButtonElement;
+
+const cardHeaderCreator = (item: UserType): HTMLDivElement => {
+    const cardHeader: HTMLDivElement = document.createElement('div');
     cardHeader.classList.add('card-header');
-    const header = document.createElement('h3');
+    const header: HTMLHeadingElement = document.createElement('h3');
     header.innerText = item.name;
     cardHeader.appendChild(header);
+
     return cardHeader;
-};
-const jobInfoCreator = (item) => {
-    const jobInfo = document.createElement('div');
+}
+
+const jobInfoCreator = (item: UserType): HTMLDivElement => {
+    const jobInfo: HTMLDivElement = document.createElement('div');
     jobInfo.classList.add('job-info');
-    const jobTitle = document.createElement('p');
-    const company = document.createElement('p');
+    const jobTitle: HTMLParagraphElement = document.createElement('p');
+    const company: HTMLParagraphElement = document.createElement('p');
     jobTitle.innerHTML = `<i>Job Title:</i> ${item.jobTitle}`;
     company.innerHTML = `<i>Company:</i> ${item.company}`;
     jobInfo.append(jobTitle, company);
+
     return jobInfo;
-};
-const cardFooterCreator = (item) => {
-    const cardFooter = document.createElement('div');
+}
+
+const cardFooterCreator = (item: UserType): HTMLDivElement => {
+    const cardFooter: HTMLDivElement = document.createElement('div');
     cardFooter.classList.add('card-footer');
-    const email = document.createElement('p');
-    const phone = document.createElement('p');
+    const email: HTMLParagraphElement = document.createElement('p');
+    const phone: HTMLParagraphElement = document.createElement('p');
     email.innerHTML = `<i>Email:</i> ${item.email}`;
     phone.innerHTML = `<i>Phone:</i> ${item.phone}`;
     cardFooter.append(email, phone);
+
     return cardFooter;
-};
-const cardCreator = (item) => {
-    const card = document.createElement('div');
+}
+
+const cardCreator = (item: UserType): HTMLDivElement => {
+    const card: HTMLDivElement = document.createElement('div');
     card.classList.add('card');
     card.appendChild(cardHeaderCreator(item));
     card.appendChild(jobInfoCreator(item));
     card.appendChild(cardFooterCreator(item));
+
     return card;
-};
-const pagination = (arr) => {
-    const arrForRepresent = arr.slice(firstIndex, firstIndex + numOfItems);
+}
+
+const pagination = (arr: UserType[]): void => {
+    const arrForRepresent: UserType[] = arr.slice(firstIndex, firstIndex + numOfItems);
     usersDiv.innerHTML = '';
     for (const item of arrForRepresent) {
         usersDiv.appendChild(cardCreator(item));
     }
+
     localStorage.setItem('startIndex', JSON.stringify(firstIndex));
-};
-const prevPagination = (arr) => {
+}
+
+const prevPagination = (arr: UserType[]): void => {
     if (firstIndex <= 0) {
         return;
     }
     firstIndex -= numOfItems;
+
     pagination(arr);
-};
-const nextPagination = (arr) => {
+}
+
+const nextPagination = (arr: UserType[]): void => {
     if (firstIndex + numOfItems >= arr.length) {
         return;
     }
     firstIndex += numOfItems;
+
     pagination(arr);
-};
+}
+
 pagination(users);
-prevBtn.onclick = () => {
+
+prevBtn.onclick = (): void => {
     prevPagination(users);
-};
-nextBtn.onclick = () => {
+}
+
+nextBtn.onclick = (): void => {
     nextPagination(users);
-};
+}
